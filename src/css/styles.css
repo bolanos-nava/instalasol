@@ -1,0 +1,154 @@
+/* Several resets */
+* {
+  font-family: "Open Sans", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Asap", sans-serif;
+  font-weight: 600;
+}
+p {
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Resetting ul styles for sidebar and footer */
+aside ul,
+footer ul,
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+aside a,
+footer a,
+header a {
+  text-decoration: none;
+}
+header,
+footer ul {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header {
+  --child-widths: 200px;
+  background-color: green;
+  z-index: 1000;
+}
+header a {
+  color: black;
+}
+#hamburger-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hamburger-menu-button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+.header-icons {
+  height: 25px;
+}
+.titles-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.titles-container * {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.titles-container h1 {
+  margin-bottom: 5px;
+}
+#hamburger-menu-container,
+#contact-icons {
+  width: var(--child-widths);
+}
+.horizontal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+#sidebar a:link,
+#sidebar a:visited {
+  color: #3b0d11;
+  font-weight: 500;
+}
+#sidebar a:hover {
+  /* color: #a1c8ff; */
+  color: #a3524e;
+}
+#sidebar {
+  position: absolute;
+  z-index: 10;
+  background-color: #a1c8ff;
+  height: 100%;
+  width: 200px;
+  top: 100px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease-in-out;
+}
+.sidebar-close {
+  transform: translateX(-100%);
+}
+#sidebar .add-margin {
+  margin-bottom: 10px;
+}
+
+footer {
+    margin-top: 50px;
+    width: 100%;
+    background-color: green;
+}
+
+.image-card {
+  background-color: rgb(207, 164, 36);
+  color: rgb(0, 0, 0);
+  margin: 10px;
+  border-radius: 8px;
+  min-height: 40vh;
+  display: flex;
+}
+.card-side-container {
+  padding: 10px;
+  display: flex;
+}
+.card-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.left {
+  width: 40%;
+  justify-content: center;
+  margin-right: 10px;
+}
+.right {
+  width: 60%;
+}
+.card-side *:not(:last-child) {
+  margin-bottom: 10px;
+}
+.project-image {
+  max-width: 95%;
+  align-self: center;
+}
