@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../src/assets/images/favicon.jpg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../src/assets/images/favicon.jpg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="../src/css/styles.css" />
     <script
       defer
@@ -30,145 +34,187 @@
 
   <body>
     <header>
-      <div id="hamburger-menu-container">
-        <button type="button" id="hamburger-menu-button">
+      <div class="header-buttons-container">
+        <button type="button" class="header-button">
           <i class="header-icons fa-solid fa-bars"></i>
         </button>
       </div>
+
       <div class="titles-container">
         <h1>InstalaSol</h1>
         <h3>Ayudándote a ahorrar dinero en tu recibo</h3>
       </div>
-      <ul id="contact-icons" class="horizontal-buttons">
-        <!-- facebook, whatsapp and email icons -->
-        <li>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="header-icons fa-brands fa-facebook"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://wa.me/+528333016249"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="header-icons fa-brands fa-whatsapp"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="mailto:parito.2000@hotmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="header-icons fa-solid fa-envelope"></i>
-          </a>
-        </li>
-      </ul>
-    </header>
 
-    <aside id="sidebar" class="sidebar-close">
-      <nav>
-        <ul>
-          <li class="add-margin">
-            <a href="../index.html">Inicio</a>
-          </li>
-          <li class="add-margin">
-            <a href="company-history.html">Historia de la empresa</a>
+      <div class="horizontal-buttons-container">
+        <ul class="horizontal-buttons">
+          <!-- facebook, whatsapp and email icons -->
+          <li>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="header-icons fa-brands fa-facebook"></i>
+            </a>
           </li>
           <li>
-            <a href="services-catalog.html">Catálogo de servicios</a>
+            <a
+              href="https://wa.me/+528333016249"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="header-icons fa-brands fa-whatsapp"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:parito.2000@hotmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="header-icons fa-solid fa-envelope"></i>
+            </a>
           </li>
         </ul>
-      </nav>
-    </aside>
-
-    <main>
-      <h2>Galería de proyectos</h2>
-      <div>
-        <select name="city" id="city-select">
-          <option value="">Ciudad</option>
-          <option value="cd-valles">Cd. Valles, S.L.P.</option>
-          <option value="zona-conurbada">Tampico, Cd. Madero, Altamira</option>
-          <option value="ebano">Ébano</option>
-          <option value="tampico-alto">Tampico Alto</option>
-        </select>
-        <select name="size" id="size-select">
-          <option value="">Tamaño</option>
-          <option value="0-10">0 a 10 paneles</option>
-          <option value="11-30">11 a 30 paneles</option>
-          <option value="31-50">31 a 50 paneles</option>
-          <option value="51-100">51 a 100 paneles</option>
-          <option value="101-200">101 a 200 paneles</option>
-          <option value="+200">Más de 200</option>
-        </select>
-        <select name="generated-power" id="generared-power-select">
-          <option value="">Potencia generada</option>
-          <option value="0-50">0 a 50 kWh</option>
-          <option value="51 a 100">51 a 100 kWh</option>
-        </select>
       </div>
+    </header>
 
-      <div class="image-card">
-        <div class="card-side-container">
-          <div class="card-side left">
-            <img
-              class="project-image"
-              src="../src/assets/images/dummy_600x400.png"
-              alt="Fotografía de la instalación"
-            />
-            <p class="installation-date"><strong>Fecha de instalación:</strong> 23/07/2023</p>
-            <p class="time-taken"><strong>Tiempo:</strong> 4 días</p>
-          </div>
-          <div class="card-side right">
-            <p><strong>Tamaño de la instalación:</strong> 40 paneles</p>
-            <p><strong>Generación:</strong> 100 kWh</p>
-            <p><strong>Lugar:</strong> Ciudad Valles, S.L.P.</p>
-            <p>
-              <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Qui dicta fuga veniam itaque dolore facilis
-              rerum adipisci eveniet rem provident quos, magni similique quae
-              quia tempore voluptatum cum corporis ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolores voluptate perspiciatis possimus dolore incidunt quas mollitia aspernatur natus dicta placeat architecto facere accusantium nam, porro sequi velit deleniti? Facere!
-            </p>
+    <div class="spinal-chord-container">
+      <aside id="sidebar">
+        <nav class="navigation__sidebar">
+          <ul class="navigation__vertical-container">
+            <li class="add-margin-down navigation__element">
+              <button type="button" class="button__rounded-right">
+                <a class="navigation__link" href="../index.html">Inicio</a>
+              </button>
+            </li>
+            <li class="add-margin-down navigation__element">
+              <button type="button" class="button__rounded-right">
+                <a class="navigation__link" href="#"
+                  >Galería de proyectos</a
+                >
+              </button>
+            </li>
+            <li class="add-margin-down navigation__element">
+              <button type="button" class="button__rounded-right">
+                <a class="navigation__link" href="about-company.html"
+                  >Sobre nosotros</a
+                >
+              </button>
+            </li>
+            <li class="add-margin-down navigation__element">
+              <button type="button" class="button__rounded-right">
+                <a class="navigation__link" href="payment.html"
+                  >Formas de pago</a
+                >
+              </button>
+            </li>
+            <li class="navigation__element">
+              <button type="button" class="button__rounded-right">
+                <a class="navigation__link" href="contact.html"
+                  >Contacto</a
+                >
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main id="gallery-main">
+        <h2 class="main-title">Galería de proyectos</h2>
+        <div>
+          <select name="city" id="city-select">
+            <option value="">Ciudad</option>
+            <option value="cd-valles">Cd. Valles, S.L.P.</option>
+            <option value="zona-conurbada">
+              Tampico, Cd. Madero, Altamira
+            </option>
+            <option value="ebano">Ébano</option>
+            <option value="tampico-alto">Tampico Alto</option>
+          </select>
+          <select name="size" id="size-select">
+            <option value="">Tamaño</option>
+            <option value="0-10">0 a 10 paneles</option>
+            <option value="11-30">11 a 30 paneles</option>
+            <option value="31-50">31 a 50 paneles</option>
+            <option value="51-100">51 a 100 paneles</option>
+            <option value="101-200">101 a 200 paneles</option>
+            <option value="+200">Más de 200</option>
+          </select>
+          <select name="generated-power" id="generared-power-select">
+            <option value="">Potencia generada</option>
+            <option value="0-50">0 a 50 kWh</option>
+            <option value="51 a 100">51 a 100 kWh</option>
+          </select>
+        </div>
+
+        <div class="image-card">
+          <div class="card-side-container">
+            <div class="card-side left">
+              <img
+                class="project-image"
+                src="../src/assets/images/dummy_600x400.png"
+                alt="Fotografía de la instalación"
+              />
+              <p class="installation-date">
+                <strong>Fecha de instalación:</strong> 23/07/2023
+              </p>
+              <p class="time-taken"><strong>Tiempo:</strong> 4 días</p>
+            </div>
+            <div class="card-side right">
+              <p><strong>Tamaño de la instalación:</strong> 40 paneles</p>
+              <p><strong>Generación:</strong> 100 kWh</p>
+              <p><strong>Lugar:</strong> Ciudad Valles, S.L.P.</p>
+              <p>
+                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque
+                dolore facilis rerum adipisci eveniet rem provident quos, magni
+                similique quae quia tempore voluptatum cum corporis ipsam! Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+                dolores voluptate perspiciatis possimus dolore incidunt quas
+                mollitia aspernatur natus dicta placeat architecto facere
+                accusantium nam, porro sequi velit deleniti? Facere!
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="image-card">
-        <div class="card-side-container">
-          <div class="card-side left">
-            <img
-              class="project-image"
-              src="../src/assets/images/dummy_600x400.png"
-              alt="Fotografía de la instalación"
-            />
-            <p class="installation-date"><strong>Fecha de instalación:</strong> 20/07/2023</p>
-            <p class="time-taken"><strong>Tiempo:</strong> 10 días</p>
-          </div>
-          <div class="card-side right">
-            <p><strong>Tamaño de la instalación:</strong> 400 paneles</p>
-            <p><strong>Generación:</strong> 2000 kWh</p>
-            <p><strong>Lugar:</strong> Ébano, S.L.P.</p>
-            <p>
-              <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Qui dicta fuga veniam itaque dolore facilis
-              rerum adipisci eveniet rem provident quos, magni similique quae
-              quia tempore voluptatum cum corporis ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolores voluptate perspiciatis
-            </p>
+        <div class="image-card">
+          <div class="card-side-container">
+            <div class="card-side left">
+              <img
+                class="project-image"
+                src="../src/assets/images/dummy_600x400.png"
+                alt="Fotografía de la instalación"
+              />
+              <p class="installation-date">
+                <strong>Fecha de instalación:</strong> 20/07/2023
+              </p>
+              <p class="time-taken"><strong>Tiempo:</strong> 10 días</p>
+            </div>
+            <div class="card-side right">
+              <p><strong>Tamaño de la instalación:</strong> 400 paneles</p>
+              <p><strong>Generación:</strong> 2000 kWh</p>
+              <p><strong>Lugar:</strong> Ébano, S.L.P.</p>
+              <p>
+                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque
+                dolore facilis rerum adipisci eveniet rem provident quos, magni
+                similique quae quia tempore voluptatum cum corporis ipsam! Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+                dolores voluptate perspiciatis
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
 
     <footer>
+      <button type="button" class="go-up-button">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
       <ul class="horizontal-buttons">
-        <li>
-          <a href="pages/contact.html">Contacto</a>
-        </li>
         <li>
           <a href="pages/copyright.html">Copyright</a>
         </li>
@@ -177,6 +223,5 @@
         </li>
       </ul>
     </footer>
-
   </body>
 </html>
