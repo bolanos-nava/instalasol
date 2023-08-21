@@ -29,78 +29,144 @@
   </head>
   <body>
     <header>
-      <div id="hamburger-menu-container">
-        <button type="button" id="hamburger-menu-button">
+      <div class="header-buttons-container">
+        <button type="button" class="header-button">
           <i class="header-icons fa-solid fa-bars"></i>
         </button>
       </div>
+
       <div class="titles-container">
         <h1>InstalaSol</h1>
         <h3>Ayudándote a ahorrar dinero en tu recibo</h3>
       </div>
-      <ul id="contact-icons" class="horizontal-buttons">
-        <!-- facebook, whatsapp and email icons -->
-        <li>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="header-icons fa-brands fa-facebook"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://wa.me/+528333016249"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="header-icons fa-brands fa-whatsapp"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="mailto:parito.2000@hotmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="header-icons fa-solid fa-envelope"></i>
-          </a>
-        </li>
-      </ul>
-    </header>
 
-    <aside id="sidebar" class="sidebar-close">
-      <nav>
-        <ul>
-          <li class="add-margin">
-            <a href="pages/company-history.html">Historia de la empresa</a>
-          </li>
-          <li class="add-margin">
-            <a href="pages/project-gallery.html">Galería de proyectos</a>
+      <div class="horizontal-buttons-container">
+        <ul class="horizontal-buttons">
+          <!-- facebook, whatsapp and email icons -->
+          <li>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="header-icons fa-brands fa-facebook"></i>
+            </a>
           </li>
           <li>
-            <a href="pages/services-catalog.html">Catálogo de servicios</a>
+            <a
+              href="https://wa.me/+528333016249"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="header-icons fa-brands fa-whatsapp"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:parito.2000@hotmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="header-icons fa-solid fa-envelope"></i>
+            </a>
           </li>
         </ul>
-      </nav>
-    </aside>
+      </div>
+    </header>
 
-    <main>
-      <h2>Nuevo proyectos en marcha</h2>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis
-        reprehenderit aut voluptatum molestiae rerum aliquid eligendi iste
-        ratione molestias porro mollitia, velit eveniet accusantium explicabo
-        doloremque obcaecati natus. Corporis, nam!
-      </p>
-    </main>
+    <div class="spinal-chord-container">
+      <aside id="sidebar">
+        <nav class="navigation__sidebar">
+          <ul class="navigation__vertical-container">
+            <li class="add-margin-down navigation__element">
+              <button type="button" class="navigation__button">
+                <a class="navigation__link" href="#">Inicio</a>
+              </button>
+            </li>
+            <li class="add-margin-down navigation__element">
+              <button type="button" class="navigation__button">
+                <a class="navigation__link" href="pages/company-history.html"
+                  >Galería de proyectos</a
+                >
+              </button>
+            </li>
+            <li class="add-margin-down navigation__element">
+              <button type="button" class="navigation__button">
+                <a class="navigation__link" href="pages/company-history.html"
+                  >Sobre nosotros</a
+                >
+              </button>
+            </li>
+            <li class="add-margin-down navigation__element">
+              <button type="button" class="navigation__button">
+                <a class="navigation__link" href="pages/project-gallery.html"
+                  >Formas de pago</a
+                >
+              </button>
+            </li>
+            <li class="navigation__element">
+              <button type="button" class="navigation__button">
+                <a class="navigation__link" href="pages/services-catalog.html"
+                  >Contacto</a
+                >
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main id="index-main">
+        <h2 id="main-title">
+          Soluciones a tu medida para ahorrar en tu consumo de electricidad
+        </h2>
+        <div class="text-button-container button-end first">
+          <p>
+            Somos una empresa dedicada a la instalación de sistemas de paneles
+            solares, siempre ofreciendo un servicio con la mejor calidad y
+            precios competitivos.
+          </p>
+          <p>
+            Solo contáctanos enviando tu recibo de CFE para generarte una
+            cotización de acuerdo con tu consumo.
+          </p>
+          <button type="button" class="navigation__button landing-page-button">
+            <a class="navigation__link" href="/pages/contact.html"
+              >Contáctanos</a
+            >
+          </button>
+        </div>
+
+        <div class="other-buttons">
+          <div class="text-button-container">
+            <p>Conoce nuestro trabajo:</p>
+            <button
+              type="button"
+              class="navigation__button landing-page-button"
+            >
+              <a class="navigation__link" href="/pages/project-gallery.html"
+                >Proyectos</a
+              >
+            </button>
+          </div>
+          <div class="text-button-container">
+            <p>Conoce a la empresa</p>
+            <button
+              type="button"
+              class="navigation__button landing-page-button"
+            >
+              <a class="navigation__link" href="/pages/company-history.html"
+                >Conócenos</a
+              >
+            </button>
+          </div>
+        </div>
+
+        <aside class="side-image"></aside>
+      </main>
+    </div>
 
     <footer>
       <ul class="horizontal-buttons">
-        <li>
-          <a href="pages/contact.html">Contacto</a>
-        </li>
         <li>
           <a href="pages/copyright.html">Copyright</a>
         </li>
