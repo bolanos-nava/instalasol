@@ -72,28 +72,26 @@
 
       <nav class="navibar navibar--absolute collapse" id="navbarNav">
         <ul class="navibar__list">
-          <li class="navibar__item center-children nav-item">
-            <a class="navibar__link active" aria-current="page" href="#"
-              >Inicio</a
-            >
+          <li class="navibar__item nav-item">
+            <span class="navibar__link active" aria-current="page">Inicio</span>
           </li>
-          <li class="navibar__item center-children nav-item">
+          <li class="navibar__item nav-item">
             <a class="navibar__link" href="#">Galería</a>
           </li>
-          <li class="navibar__item center-children nav-item">
+          <li class="navibar__item nav-item">
             <a class="navibar__link" href="#">Historia de la compañía</a>
           </li>
-          <li class="navibar__item center-children nav-item">
+          <li class="navibar__item nav-item">
             <a class="navibar__link" href="#">Contacto</a>
           </li>
-          <li class="navibar__item center-children nav-item">
+          <li class="navibar__item nav-item">
             <a class="navibar__link" href="#">Catálogo de precios</a>
           </li>
         </ul>
       </nav>
 
+      <!-- facebook, whatsapp and email icons -->
       <ul class="header__buttons-container header__buttons-container--social">
-        <!-- facebook, whatsapp and email icons -->
         <li>
           <a
             class="header__social-button"
@@ -127,48 +125,40 @@
       </ul>
     </header>
 
-    <div class="spinal-chord-container">
-      <aside id="sidebar">
-        <nav class="navigation__sidebar">
-          <ul class="navigation__vertical-container">
-            <li class="add-margin-down navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="#">Inicio</a>
-              </button>
-            </li>
-            <li class="add-margin-down navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="pages/project-gallery.html"
-                  >Galería de proyectos</a
-                >
-              </button>
-            </li>
-            <li class="add-margin-down navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="pages/about-company.html"
-                  >Sobre nosotros</a
-                >
-              </button>
-            </li>
-            <li class="add-margin-down navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="pages/payment.html"
-                  >Formas de pago</a
-                >
-              </button>
-            </li>
-            <li class="navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="pages/contact.html"
-                  >Contacto</a
-                >
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </aside>
+    <div class="body-container">
+      <nav class="sidebar__nav">
+        <ul class="sidebar__nav-list">
+          <li class="sidebar__nav-element">
+            <span class="sidebar__nav-link sidebar__nav-link--current-page"
+              >Inicio</span
+            >
+          </li>
+          <li class="sidebar__nav-element">
+            <a class="sidebar__nav-link" href="pages/project-gallery.html"
+              ><span class="sidebar__nav-link-text"
+                >Galería de proyectos</span
+              ></a
+            >
+          </li>
+          <li class="sidebar__nav-element">
+            <a class="sidebar__nav-link" href="pages/about-company.html"
+              ><span class="sidebar__nav-link-text">Sobre nosotros</span></a
+            >
+          </li>
+          <li class="add-margin-down sidebar__nav-element">
+            <a class="sidebar__nav-link" href="pages/payment.html"
+              ><span class="sidebar__nav-link-text">Formas de pago</span></a
+            >
+          </li>
+          <li class="navigation__element sidebar__nav-element">
+            <a class="sidebar__nav-link" href="pages/contact.html"
+              ><span class="sidebar__nav-link-text">Contacto</span></a
+            >
+          </li>
+        </ul>
+      </nav>
 
-      <main id="index-main">
+      <main class="container" id="index-main">
         <h2 id="main-title">
           Soluciones a tu medida para ahorrar en tu consumo de electricidad
         </h2>
