@@ -13,6 +13,9 @@
   --asparagus: #68a357ff;
   --header-footer-height: 80px;
   --main-container-height: calc(100vb - 2 * var(--header-footer-height));
+
+  margin: 0;
+  padding: 0;
 }
 h1,
 h2,
@@ -22,23 +25,23 @@ h5,
 h6 {
   font-family: "Asap", sans-serif;
   font-weight: 600;
-}
-p {
   margin: 0;
+  padding: 0;
 }
 html {
   height: 100%;
 }
 body {
-  margin: 0;
-  padding: 0;
   position: relative;
   min-height: 100%;
 }
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 a,
 a:link,
@@ -50,7 +53,7 @@ a:hover {
 /* END RESETS */
 
 /* STYLES FOR HEADER AND FOOTER */
-header,
+/* header,
 footer {
   height: var(--header-footer-height);
   background-color: var(--asparagus);
@@ -61,9 +64,9 @@ footer {
 header > * {
   display: inline-block;
   vertical-align: middle;
-}
+} */
 
-.header-buttons-container {
+/* .header-buttons-container {
   width: 20%;
 }
 .header-button {
@@ -102,7 +105,73 @@ header > * {
 .header-icons {
   height: 25px;
   cursor: pointer;
+} */
+.header,
+.header > * {
+  display: flex;
 }
+.header {
+  width: 100%;
+  padding: 5px 0;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--asparagus);
+  gap: 5%;
+  position: relative;
+}
+.header__titles {
+  flex: 1 0 50%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.header__title {
+  text-align: center;
+}
+.header__title--main {
+  font-size: 1.8rem;
+}
+.header__title--secondary {
+  font-size: 1.2rem;
+}
+.header__buttons-container {
+  flex: 1 0 20%;
+  justify-content: center;
+  align-items: center;
+}
+.header__buttons-container--social {
+  gap: 10px;
+}
+.header__social-icon {
+  font-size: 1.3rem;
+}
+.navibar {
+  border-radius: 0 0 10px 10px;
+}
+.navibar--absolute {
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+  background-color: var(--hunyadi-yellow);
+}
+.navibar__list {
+  padding: 5px 25px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+.navibar__link:not(.active) {
+  opacity: 0.6;
+  font-weight: 500;
+}
+.navibar__link.active {
+  font-weight: 700;
+}
+.navibar__link:hover:not(.active) {
+  opacity: 1;
+}
+
 
 footer {
   bottom: 0;
@@ -121,7 +190,6 @@ footer {
   font-size: 30px;
 }
 /* END STYLES FOR HEADER AND FOOTER */
-
 
 /* STYLES FOR CONTAINER OF SIDEBAR */
 .spinal-chord-container {
@@ -178,7 +246,6 @@ footer {
   height: 100%;
 }
 /* END STYELS FOR CONTAINER OF SIDEBAR */
-
 
 /* STYLING MAIN */
 main {
