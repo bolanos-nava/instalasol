@@ -49,9 +49,9 @@
 
   <body>
     <header class="header">
-      <div class="header__buttons-container navbar">
+      <div class="header__buttons-container navbar" id="navbarTogglerContainer">
         <button
-          class="navbar-toggler"
+          class="navibar__toggler navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -69,6 +69,28 @@
           Ayudándote a ahorrar dinero en tu recibo
         </h3>
       </div>
+
+      <nav class="navibar navibar--absolute collapse" id="navbarNav">
+        <ul class="navibar__list">
+          <li class="navibar__item center-children nav-item">
+            <a class="navibar__link active" aria-current="page" href="#"
+              >Inicio</a
+            >
+          </li>
+          <li class="navibar__item center-children nav-item">
+            <a class="navibar__link" href="#">Galería</a>
+          </li>
+          <li class="navibar__item center-children nav-item">
+            <a class="navibar__link" href="#">Historia de la compañía</a>
+          </li>
+          <li class="navibar__item center-children nav-item">
+            <a class="navibar__link" href="#">Contacto</a>
+          </li>
+          <li class="navibar__item center-children nav-item">
+            <a class="navibar__link" href="#">Catálogo de precios</a>
+          </li>
+        </ul>
+      </nav>
 
       <ul class="header__buttons-container header__buttons-container--social">
         <!-- facebook, whatsapp and email icons -->
@@ -104,30 +126,6 @@
         </li>
       </ul>
     </header>
-
-
-
-    <nav class="navibar navibar--absolute collapse" id="navbarNav">
-      <ul class="navibar__list">
-        <li class="nav-item">
-          <a class="navibar__link active" aria-current="page" href="#"
-            >Inicio</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="navibar__link" href="#">Galería</a>
-        </li>
-        <li class="nav-item">
-          <a class="navibar__link" href="#">Historia de la compañía</a>
-        </li>
-        <li class="nav-item">
-          <a class="navibar__link" href="#">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="navibar__link" href="#">Catálogo de precios</a>
-        </li>
-      </ul>
-    </nav>
 
     <div class="spinal-chord-container">
       <aside id="sidebar">
