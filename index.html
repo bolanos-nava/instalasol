@@ -54,8 +54,8 @@
           class="navibar__toggler navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-target="#headerNav"
+          aria-controls="headerNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
@@ -69,26 +69,6 @@
           Ayudándote a ahorrar dinero en tu recibo
         </h3>
       </div>
-
-      <nav class="navibar navibar--absolute collapse" id="navbarNav">
-        <ul class="navibar__list">
-          <li class="navibar__item nav-item">
-            <span class="navibar__link active" aria-current="page">Inicio</span>
-          </li>
-          <li class="navibar__item nav-item">
-            <a class="navibar__link" href="#">Galería</a>
-          </li>
-          <li class="navibar__item nav-item">
-            <a class="navibar__link" href="#">Historia de la compañía</a>
-          </li>
-          <li class="navibar__item nav-item">
-            <a class="navibar__link" href="#">Contacto</a>
-          </li>
-          <li class="navibar__item nav-item">
-            <a class="navibar__link" href="#">Catálogo de precios</a>
-          </li>
-        </ul>
-      </nav>
 
       <!-- facebook, whatsapp and email icons -->
       <ul class="header__buttons-container header__buttons-container--social">
@@ -125,89 +105,124 @@
       </ul>
     </header>
 
+    <nav
+      class="navibar navibar--header navibar--header--absolute collapse"
+      id="headerNav"
+    >
+      <ul class="navibar__list--header">
+        <li class="navibar__list-element--header nav-item">
+          <span
+            class="navibar__link navibar__link--header active-link"
+            aria-current="page"
+            >Inicio</span
+          >
+        </li>
+        <li class="navibar__list-element--header nav-item">
+          <a class="navibar__link navibar__link--header" href="#"
+            ><span class="navibar__link-text--header">Galería</span></a
+          >
+        </li>
+        <li class="navibar__list-element--header nav-item">
+          <a class="navibar__link navibar__link--header" href="#"
+            ><span class="navibar__link-text--header"
+              >Historia de la compañía</span
+            >
+          </a>
+        </li>
+        <li class="navibar__list-element--header nav-item">
+          <a class="navibar__link navibar__link--header" href="#"
+            ><span class="navibar__link-text--header">Contacto</span></a
+          >
+        </li>
+        <li class="navibar__list-element--header nav-item">
+          <a class="navibar__link navibar__link--header" href="#"
+            ><span class="navibar__link-text--header"
+              >Catálogo de precios</span
+            ></a
+          >
+        </li>
+      </ul>
+    </nav>
+
     <div class="body-container">
-      <nav class="sidebar__nav">
-        <ul class="sidebar__nav-list">
-          <li class="sidebar__nav-element">
-            <span class="sidebar__nav-link sidebar__nav-link--current-page"
-              >Inicio</span
+      <nav class="navibar">
+        <ul class="navibar__list">
+          <li class="navibar__list-element">
+            <span class="navibar__link active-link">Inicio</span>
+          </li>
+          <li class="navibar__list-element">
+            <a class="navibar__link" href="pages/project-gallery.html"
+              ><span class="navibar__link-text">Galería de proyectos</span></a
             >
           </li>
-          <li class="sidebar__nav-element">
-            <a class="sidebar__nav-link" href="pages/project-gallery.html"
-              ><span class="sidebar__nav-link-text"
-                >Galería de proyectos</span
-              ></a
+          <li class="navibar__list-element">
+            <a class="navibar__link" href="pages/about-company.html"
+              ><span class="navibar__link-text">Sobre nosotros</span></a
             >
           </li>
-          <li class="sidebar__nav-element">
-            <a class="sidebar__nav-link" href="pages/about-company.html"
-              ><span class="sidebar__nav-link-text">Sobre nosotros</span></a
+          <li class="navibar__list-element">
+            <a class="navibar__link" href="pages/payment.html"
+              ><span class="navibar__link-text">Formas de pago</span></a
             >
           </li>
-          <li class="add-margin-down sidebar__nav-element">
-            <a class="sidebar__nav-link" href="pages/payment.html"
-              ><span class="sidebar__nav-link-text">Formas de pago</span></a
-            >
-          </li>
-          <li class="navigation__element sidebar__nav-element">
-            <a class="sidebar__nav-link" href="pages/contact.html"
-              ><span class="sidebar__nav-link-text">Contacto</span></a
+          <li class="navibar__list-element">
+            <a class="navibar__link" href="pages/contact.html"
+              ><span class="navibar__link-text">Contacto</span></a
             >
           </li>
         </ul>
       </nav>
 
-      <main class="container" id="index-main">
-        <h2 id="main-title">
+      <main class="home-main" id="index-main">
+        <h2 class="home-main__title">
           Soluciones a tu medida para ahorrar en tu consumo de electricidad
         </h2>
-        <div class="text-button-container button-end first">
-          <p>
-            Somos una empresa dedicada a la instalación de sistemas de paneles
-            solares, siempre ofreciendo un servicio con la mejor calidad y
-            precios competitivos.
-          </p>
-          <p>
-            Solo contáctanos enviando tu recibo de CFE para generarte una
-            cotización de acuerdo con tu consumo.
-          </p>
-          <button
-            type="button"
-            class="button__rounded-right button__rounded-both"
-          >
-            <a class="navigation__link" href="/pages/contact.html"
+        <div class="home-main__column">
+          <div class="home-main__text-column">
+            <p>
+              Somos una empresa dedicada a la instalación de sistemas de paneles
+              solares, siempre ofreciendo un servicio con la mejor calidad y
+              precios competitivos.
+            </p>
+            <p>
+              Solo contáctanos enviando tu recibo de CFE para generarte una
+              cotización de acuerdo con tu consumo.
+            </p>
+            <a
+              class="home-main__link home-main__link--start btn btn-primary"
+              role="button"
+              href="/pages/contact.html"
               >Contáctanos</a
             >
-          </button>
-        </div>
-
-        <div class="other-buttons">
-          <div class="text-button-container">
-            <p>Conoce nuestro trabajo:</p>
-            <button
-              type="button"
-              class="button__rounded-right button__rounded-both"
-            >
-              <a class="navigation__link" href="/pages/project-gallery.html"
+          </div>
+          <div class="home-main__navigation-buttons">
+            <div class="home-main__button-text-container">
+              <p>Conoce nuestro trabajo:</p>
+              <a
+                class="home-main__link btn btn-primary"
+                role="button"
+                href="/pages/project-gallery.html"
                 >Proyectos</a
               >
-            </button>
-          </div>
-          <div class="text-button-container">
-            <p>Conoce a la empresa</p>
-            <button
-              type="button"
-              class="button__rounded-right button__rounded-both"
-            >
-              <a class="navigation__link" href="/pages/about-company.html"
+            </div>
+            <div class="home-main__button-text-container">
+              <p>Conoce a la empresa</p>
+              <a
+                class="home-main__link btn btn-primary"
+                role="button"
+                href="/pages/about-company.html"
                 >Conócenos</a
               >
-            </button>
+            </div>
           </div>
         </div>
-
-        <aside class="side-image"></aside>
+        <aside class="home-main__aside center-children">
+          <img
+            class="home-main__side-img"
+            src="src/assets/images/amenra-le-cercle.jpg"
+            alt=""
+          />
+        </aside>
       </main>
     </div>
 
