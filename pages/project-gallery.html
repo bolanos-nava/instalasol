@@ -47,7 +47,7 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <div class="header__buttons-container navbar" id="navbarTogglerContainer">
         <button
           class="navibar__toggler navbar-toggler"
@@ -187,14 +187,14 @@
         </ul>
       </nav>
 
-      <main class="main main--gallery">
+      <main class="main main--gallery" id="galleryMain">
         <h2 class="main-title main-title--gallery">Galería de proyectos</h2>
         <div class="main-gallery__select-group">
-          <div class="_input-group main-gallery__select-row">
+          <div class="_input-group">
             <label class="_input-group__label" for="citySelect">Ciudad</label>
             <select
               id="citySelect"
-              class="main-gallery__select form-select"
+              class="form-select"
               aria-label="Selector de ciudad"
               title="Selecciona ciudad"
               name="city"
@@ -203,15 +203,15 @@
               <option value="1">Cd. Valles, S.L.P.</option>
               <option value="2">Tampico, Cd. Madero, Altamira</option>
               <option value="3">Ébano</option>
-              <option value="tampico-alto">Tampico Alto</option>
+              <option value="4">Tampico Alto</option>
             </select>
           </div>
-          <div class="_input-group main-gallery__select-row">
+          <div class="_input-group">
             <label for="sizesSelect" class="_input-group__label"
               >Tamaño de instalación</label
             >
             <select
-              class="main-gallery__select form-select"
+              class="form-select"
               aria-label="Selector de número de paneles solares"
               title="Selecciona tamaño de instalacion"
               name="size"
@@ -232,7 +232,7 @@
             >
             <select
               id="powerSelect"
-              class="main-gallery__select form-select"
+              class="form-select"
               aria-label="Selector de potencia generada"
               title="Selecciona potencia generada"
               name="generated-power"
@@ -244,20 +244,68 @@
           </div>
         </div>
 
-        <div class="image-card">
-          <div class="card-side-container">
-            <div class="card-side left">
-              <img
-                class="project-image"
-                src="../src/assets/images/dummy_600x400.png"
-                alt="Fotografía de la instalación"
-              />
-              <p class="installation-date">
-                <strong>Fecha de instalación:</strong> 23/07/2023
-              </p>
-              <p class="time-taken"><strong>Tiempo:</strong> 4 días</p>
+        <div class="photocards__container">
+          <div class="photocard">
+            <div id="carouselIndicators1" class="_carousel carousel slide">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselIndicators1"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Foto 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselIndicators1"
+                  data-bs-slide-to="1"
+                  aria-label="Foto 2"
+                ></button>
+              </div>
+              <div class="_carousel__photos-container carousel-inner">
+                <div class="_carousel__photo-container carousel-item active">
+                  <img
+                    src="../src/assets/images/dummy_600x400.png"
+                    class="_carousel__photo"
+                    alt="Foto de trabajo realizado"
+                  />
+                </div>
+                <div class="_carousel__photo-container carousel-item">
+                  <img
+                    src="../src/assets/images/dummy_400x1000.png"
+                    class="_carousel__photo"
+                    alt="Foto de trabajo realizado"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselIndicators1"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselIndicators1"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
             </div>
-            <div class="card-side right">
+            <div class="photocard__footer">
+              <p><strong>Fecha de instalación:</strong> 23/07/2023</p>
               <p><strong>Tamaño de la instalación:</strong> 40 paneles</p>
               <p><strong>Generación:</strong> 100 kWh</p>
               <p><strong>Lugar:</strong> Ciudad Valles, S.L.P.</p>
@@ -271,43 +319,195 @@
                 mollitia aspernatur natus dicta placeat architecto facere
                 accusantium nam, porro sequi velit deleniti? Facere!
               </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="image-card">
-          <div class="card-side-container">
-            <div class="card-side left">
-              <img
-                class="project-image"
-                src="../src/assets/images/dummy_600x400.png"
-                alt="Fotografía de la instalación"
-              />
-              <p class="installation-date">
-                <strong>Fecha de instalación:</strong> 20/07/2023
-              </p>
-              <p class="time-taken"><strong>Tiempo:</strong> 10 días</p>
-            </div>
-            <div class="card-side right">
-              <p><strong>Tamaño de la instalación:</strong> 400 paneles</p>
-              <p><strong>Generación:</strong> 2000 kWh</p>
-              <p><strong>Lugar:</strong> Ébano, S.L.P.</p>
               <p>
                 <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit
                 amet consectetur adipisicing elit. Qui dicta fuga veniam itaque
                 dolore facilis rerum adipisci eveniet rem provident quos, magni
                 similique quae quia tempore voluptatum cum corporis ipsam! Lorem
                 ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                dolores voluptate perspiciatis
+                dolores voluptate perspiciatis possimus dolore incidunt quas
+                mollitia aspernatur natus dicta placeat architecto facere
+                accusantium nam, porro sequi velit deleniti? Facere!
               </p>
             </div>
           </div>
-        </div>
+          <div class="photocard">
+            <div id="carouselIndicators2" class="_carousel carousel slide">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselIndicators2"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  <!-- aria-label="Foto 1" 
+                ></button> 
+                <button 
+                  type="button" 
+                  data-bs-target="#carouselIndicators2" 
+                  data-bs-slide-to="1" 
+                  aria-label="Foto 2" 
+                ></button> 
+              </div> 
+              <div class="_carousel__photos-container carousel-inner"> 
+                <div class="_carousel__photo-container carousel-item active"> 
+                  <img 
+                    src="../src/assets/images/dummy_600x400.png" 
+                    class="_carousel__photo" 
+                    alt="Foto de trabajo realizado" 
+                  /> 
+                </div> 
+                <div class="_carousel__photo-container carousel-item"> 
+                  <img 
+                    src="../src/assets/images/dummy_400x1000.png" 
+                    class="_carousel__photo" 
+                    alt="Foto de trabajo realizado" 
+                  /> 
+                </div> 
+              </div> 
+              <button 
+                class="carousel-control-prev" 
+                type="button" 
+                data-bs-target="#carouselIndicators2" 
+                data-bs-slide="prev" 
+              > 
+                <span 
+                  class="carousel-control-prev-icon" 
+                  aria-hidden="true" 
+                ></span> 
+                <span class="visually-hidden">Anterior</span> 
+              </button> 
+              <button 
+                class="carousel-control-next" 
+                type="button" 
+                data-bs-target="#carouselIndicators2" 
+                data-bs-slide="next" 
+              > 
+                <span 
+                  class="carousel-control-next-icon" 
+                  aria-hidden="true" 
+                ></span> 
+                <span class="visually-hidden">Siguiente</span> 
+              </button> 
+            </div> 
+            <div class="photocard__footer"> 
+              <p><strong>Fecha de instalación:</strong> 23/07/2023</p> 
+              <p><strong>Tamaño de la instalación:</strong> 40 paneles</p> 
+              <p><strong>Generación:</strong> 100 kWh</p> 
+              <p><strong>Lugar:</strong> Ciudad Valles, S.L.P.</p> 
+              <p> 
+                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit 
+                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque 
+                dolore facilis rerum adipisci eveniet rem provident quos, magni 
+                similique quae quia tempore voluptatum cum corporis ipsam! Lorem 
+                ipsum dolor sit amet consectetur adipisicing elit. Quaerat 
+                dolores voluptate perspiciatis possimus dolore incidunt quas 
+                mollitia aspernatur natus dicta placeat architecto facere 
+                accusantium nam, porro sequi velit deleniti? Facere! 
+              </p> 
+              <p> 
+                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit 
+                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque 
+                dolore facilis rerum adipisci eveniet rem provident quos, magni 
+                similique quae quia tempore voluptatum cum corporis ipsam! Lorem 
+                ipsum dolor sit amet consectetur adipisicing elit. Quaerat 
+                dolores voluptate perspiciatis possimus dolore incidunt quas 
+                mollitia aspernatur natus dicta placeat architecto facere 
+                accusantium nam, porro sequi velit deleniti? Facere! 
+              </p> 
+            </div> 
+          </div> 
+          <div class="photocard">
+            <div id="carouselIndicators3" class="_carousel carousel slide">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselIndicators3"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  <!-- aria-label="Foto 1" 
+                ></button> 
+                <button 
+                  type="button" 
+                  data-bs-target="#carouselIndicators3" 
+                  data-bs-slide-to="1" 
+                  aria-label="Foto 2" 
+                ></button> 
+              </div> 
+              <div class="_carousel__photos-container carousel-inner"> 
+                <div class="_carousel__photo-container carousel-item active"> 
+                  <img 
+                    src="../src/assets/images/dummy_600x400.png" 
+                    class="_carousel__photo" 
+                    alt="Foto de trabajo realizado" 
+                  /> 
+                </div> 
+                <div class="_carousel__photo-container carousel-item"> 
+                  <img 
+                    src="../src/assets/images/dummy_400x1000.png" 
+                    class="_carousel__photo" 
+                    alt="Foto de trabajo realizado" 
+                  /> 
+                </div> 
+              </div> 
+              <button 
+                class="carousel-control-prev" 
+                type="button" 
+                data-bs-target="#carouselIndicators3" 
+                data-bs-slide="prev" 
+              > 
+                <span 
+                  class="carousel-control-prev-icon" 
+                  aria-hidden="true" 
+                ></span> 
+                <span class="visually-hidden">Anterior</span> 
+              </button> 
+              <button 
+                class="carousel-control-next" 
+                type="button" 
+                data-bs-target="#carouselIndicators3" 
+                data-bs-slide="next" 
+              > 
+                <span 
+                  class="carousel-control-next-icon" 
+                  aria-hidden="true" 
+                ></span> 
+                <span class="visually-hidden">Siguiente</span> 
+              </button> 
+            </div> 
+            <div class="photocard__footer"> 
+              <p><strong>Fecha de instalación:</strong> 23/07/2023</p> 
+              <p><strong>Tamaño de la instalación:</strong> 40 paneles</p> 
+              <p><strong>Generación:</strong> 100 kWh</p> 
+              <p><strong>Lugar:</strong> Ciudad Valles, S.L.P.</p> 
+              <p> 
+                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit 
+                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque 
+                dolore facilis rerum adipisci eveniet rem provident quos, magni 
+                similique quae quia tempore voluptatum cum corporis ipsam! Lorem 
+                ipsum dolor sit amet consectetur adipisicing elit. Quaerat 
+                dolores voluptate perspiciatis possimus dolore incidunt quas 
+                mollitia aspernatur natus dicta placeat architecto facere 
+                accusantium nam, porro sequi velit deleniti? Facere! 
+              </p> 
+              <p> 
+                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit 
+                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque 
+                dolore facilis rerum adipisci eveniet rem provident quos, magni 
+                similique quae quia tempore voluptatum cum corporis ipsam! Lorem 
+                ipsum dolor sit amet consectetur adipisicing elit. Quaerat 
+                dolores voluptate perspiciatis possimus dolore incidunt quas 
+                mollitia aspernatur natus dicta placeat architecto facere 
+                accusantium nam, porro sequi velit deleniti? Facere! 
+              </p> 
+            </div> 
+          </div> 
       </main>
     </div>
 
     <footer class="footer">
-      <a href="#indexMain" class="go-to-top-button">
+      <a href="#header" class="go-to-top-button">
         <i class="fa-solid fa-arrow-up"></i>
       </a>
       <ul class="footer__buttons-container">
