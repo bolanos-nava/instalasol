@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../src/assets/images/favicon.jpg"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="../src/css/styles.css" />
+    <!-- FontAwesome icons -->
     <script
       defer
       src="../node_modules/@fortawesome/fontawesome-free/js/brands.js"
@@ -25,118 +20,216 @@
       defer
       src="../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"
     ></script>
-    <script defer src="../src/js/app.js"></script>
+
+    <!-- Google Fonts import -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@400;500;600;700;800&display=swap");
     </style>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="src/assets/bootstrap-5.3.2/css/bootstrap.min.css">
+   <script defer src="src/assets/bootstrap-5.3.2/js/bootstrap.min.js"></script> -->
+
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
     <title>InstalaSol | Formas de pago</title>
   </head>
   <body>
-    <header>
-      <div class="header-buttons-container">
-        <button type="button" class="header-button">
-          <i class="header-icons fa-solid fa-bars"></i>
+    <header class="header" id="header">
+      <div class="header__buttons-container navbar" id="navbarTogglerContainer">
+        <button
+          class="navibar__toggler navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#headerNav"
+          aria-controls="headerNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
 
-      <div class="titles-container">
-        <h1>InstalaSol</h1>
-        <h3>Ayudándote a ahorrar dinero en tu recibo</h3>
+      <div class="header__logo-container mobile-hidden">
+        <img
+          class="header__logo"
+          src="../src/assets/images/dummy_600x400.png"
+          alt="InstalaSol logo"
+        />
       </div>
 
-      <div class="horizontal-buttons-container">
-        <ul class="horizontal-buttons">
-          <!-- facebook, whatsapp and email icons -->
-          <li>
+      <div class="header__titles">
+        <h1 class="header__title header__title--main">InstalaSol</h1>
+        <h3 class="header__title header__title--secondary">
+          Ayudándote a ahorrar dinero en tu recibo
+        </h3>
+      </div>
+
+      <!-- facebook, whatsapp and email icons -->
+      <ul class="header__buttons-container header__buttons-container--social">
+        <li>
+          <a
+            class="header__social-button"
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="header__social-icon fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            class="social-buttons__button"
+            href="https://wa.me/+528333016249"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="header__social-icon fa-brands fa-whatsapp"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            class="social-buttons__button"
+            href="mailto:parito.2000@hotmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="header__social-icon fa-solid fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+
+      <nav
+        class="navibar navibar--header navibar--header--absolute collapse"
+        id="headerNav"
+      >
+        <ul class="navibar__list--header">
+          <li class="navibar__list-element--header nav-item">
             <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              class="navibar__link navibar__link--header button--rounded"
+              href="../index.html"
+              ><span class="navibar__link-text--header">Inicio</span></a
             >
-              <i class="header-icons fa-brands fa-facebook"></i>
-            </a>
           </li>
-          <li>
+          <li class="navibar__list-element--header nav-item">
             <a
-              href="https://wa.me/+528333016249"
-              target="_blank"
-              rel="noopener noreferrer"
+              class="navibar__link navibar__link--header button--rounded"
+              href="project-gallery.html"
+              ><span class="navibar__link-text--header">Galería de proyectos</span></a
             >
-              <i class="header-icons fa-brands fa-whatsapp"></i>
-            </a>
           </li>
-          <li>
+          <li class="navibar__list-element--header nav-item">
             <a
-              href="mailto:parito.2000@hotmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              class="navibar__link navibar__link--header button--rounded"
+              href="about-company.html"
+              ><span class="navibar__link-text--header">Sobre nosotros</span></a
             >
-              <i class="header-icons fa-solid fa-envelope"></i>
-            </a>
+          </li>
+          <li class="navibar__list-element--header nav-item">
+            <span
+              class="navibar__link navibar__link--header button--rounded active-link"
+            >
+              Formas de pago
+            </span>
+          </li>
+          <li class="navibar__list-element--header nav-item">
+            <a
+              class="navibar__link navibar__link--header button--rounded"
+              href="contact.html"
+              ><span class="navibar__link-text--header">Contacto</span></a
+            >
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
 
-    <div class="spinal-chord-container">
-      <aside id="sidebar">
-        <nav class="navigation__sidebar">
-          <ul class="navigation__vertical-container">
-            <li class="add-margin-down navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="../index.html">Inicio</a>
-              </button>
-            </li>
-            <li class="add-margin-down navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="project-gallery.html"
-                  >Galería de proyectos</a
-                >
-              </button>
-            </li>
-            <li class="add-margin-down navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="about-company.html"
-                  >Sobre nosotros</a
-                >
-              </button>
-            </li>
-            <li class="add-margin-down navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="#"
-                  >Formas de pago</a
-                >
-              </button>
-            </li>
-            <li class="navigation__element">
-              <button type="button" class="button__rounded-right">
-                <a class="navigation__link" href="contact.html">Contacto</a>
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </aside>
+    <div class="body-container">
+      <nav class="navibar">
+        <ul class="navibar__list">
+          <li class="navibar__list-element">
+            <a class="navibar__link" href="../index.html"
+              ><span class="navibar__link-text">Inicio</span></a
+            >
+          </li>
+          <li class="navibar__list-element">
+            <a class="navibar__link" href="project-gallery.html"
+              ><span class="navibar__link-text">Galería de proyectos</span></a
+            >
+          </li>
+          <li class="navibar__list-element">
+            <a class="navibar__link" href="about-company.html"
+              ><span class="navibar__link-text">Sobre nosotros</span></a
+            >
+          </li>
+          <li class="navibar__list-element">
+            <span class="navibar__link active-link" href="payment.html">
+              Formas de pago
+            </span>
+          </li>
+          <li class="navibar__list-element">
+            <a class="navibar__link" href="contact.html"
+              ><span class="navibar__link-text">Contacto</span></a
+            >
+          </li>
+        </ul>
+      </nav>
 
-      <main id="payment-main">
+      <main class="main container container-sm container-md container-lg">
         <h2 class="main-title">Formas de pago</h2>
         <section class="payment__section">
-            <p><strong>Crédito bancario: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cupiditate adipisci at dolor et maiores ducimus tempora, corrupti alias sit voluptates exercitationem debitis atque? Porro ut velit mollitia aspernatur ab?</p>
-            <p><strong>Tarjeta de crédito hasta a 6 meses sin intereses: </strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem labore alias tenetur iste obcaecati eum magni necessitatibus sed optio accusantium, quo exercitationem. Nemo assumenda maiores possimus vel est cum dolor!</p>
-            <p><strong>De contado: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto obcaecati maiores minima alias tempora necessitatibus magnam distinctio ratione est. Assumenda corporis aut rem dolorum eaque perferendis? Minima quod corrupti aliquam.</p>
+          <p>
+            <strong>Crédito bancario: </strong>Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Repellat cupiditate adipisci at dolor
+            et maiores ducimus tempora, corrupti alias sit voluptates
+            exercitationem debitis atque? Porro ut velit mollitia aspernatur ab?
+          </p>
+          <p>
+            <strong>Tarjeta de crédito hasta a 6 meses sin intereses: </strong
+            >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
+            labore alias tenetur iste obcaecati eum magni necessitatibus sed
+            optio accusantium, quo exercitationem. Nemo assumenda maiores
+            possimus vel est cum dolor!
+          </p>
+          <p>
+            <strong>De contado: </strong>Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Iusto obcaecati maiores minima alias tempora
+            necessitatibus magnam distinctio ratione est. Assumenda corporis aut
+            rem dolorum eaque perferendis? Minima quod corrupti aliquam.
+          </p>
         </section>
       </main>
     </div>
 
-    <footer>
-        <button type="button" class="go-up-button">
-            <i class="fa-solid fa-arrow-up"></i>
-          </button>
-      <ul class="horizontal-buttons">
-        <li>
-          <a href="pages/copyright.html">Copyright</a>
+    <footer class="footer">
+      <a href="#header" class="go-to-top-button">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+      <ul class="footer__links-list">
+        <li class="footer__links-element">
+          <a
+            role="button"
+            class="footer__link btn button--link button--rounded"
+            href="copyright.html"
+            >Copyright</a
+          >
         </li>
-        <li>
-          <a href="pages/privacy-notice.html">Aviso de privacidad</a>
+        <li class="footer__links-element">
+          <a
+            class="footer__link btn button--link button--rounded"
+            href="privacy-notice.html"
+            >Aviso de privacidad</a
+          >
         </li>
       </ul>
     </footer>

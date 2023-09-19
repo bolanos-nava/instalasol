@@ -11,10 +11,19 @@
   --hunyadi-yellow: #edb458ff;
   --jet: #282b28ff;
   --asparagus: #68a357ff;
-  --header-footer-height: 80px;
-  --main-container-height: calc(100vb - 2 * var(--header-footer-height));
   margin: 0;
   padding: 0;
+}
+/* Putting height: 100% in the body and min-height: 100% is a combination that makes your page have a height that covers all the available height of the device, without leaving empty space at the end of the page, and even if you don't have content in the page. Additionally, by making body a flex container we can tell the inner containers to take all available space with the use of flex: 1  */
+html {
+  height: 100%;
+}
+body {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 h1,
 h2,
@@ -26,13 +35,6 @@ h6 {
   font-weight: 600;
   margin: 0;
   padding: 0;
-}
-html {
-  height: 100%;
-}
-body {
-  position: relative;
-  min-height: 100%;
 }
 ul,
 ol {
@@ -52,10 +54,6 @@ a:hover {
 p {
   margin: 0;
   padding: 0;
-}
-body {
-  display: flex;
-  flex-flow: column;
 }
 
 ::-webkit-scrollbar {
@@ -137,14 +135,14 @@ body {
 .header__titles {
   flex: 1 0 40%;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2px;
 }
 @media (min-width: 768px) {
   .header__titles {
-    flex-flow: row;
+    flex-direction: row;
     gap: 15px;
   }
 }
@@ -212,7 +210,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-flow: column;
+  flex-direction: column;
 }
 .navibar__list-container--header {
   width: 100%;
@@ -222,7 +220,7 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
-  flex-flow: column;
+  flex-direction: column;
   padding: 10px 0;
 }
 .navibar__list-element--header {
@@ -280,20 +278,20 @@ body {
 
 /* CONTAINER FOR SIDEBAR AND MAIN */
 .body-container {
-  flex: 1; /* so the container covers all available space and sends the footer to the bottom */
+  flex: 1;
   display: flex;
-  min-height: var(--main-container-height);
   position: relative;
 }
 /* END STYLES FOR CONTAINER OF SIDEBAR AND MAIN */
 
 /* STYLES FOR FOOTER */
 .footer {
-  flex: 0 0 60px; /* footer can't stretch nor shrink, and it will have a fixed size of 60px */
+  flex: 0; /* footer can't stretch nor shrink, and it will have a fixed size of 60px */
   background-color: var(--asparagus);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 .go-to-top-button,
 .go-to-top-button:visited {
@@ -314,50 +312,30 @@ body {
   font-size: 30px;
   color: #000000;
 }
-.footer__buttons-container {
+.footer__links-list {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
-/* END STYLES FOR FOOTER */
-
-/* UNUSED */
-.navigation__link:link,
-.navigation__link:visited {
-  color: var(--jet);
-  font-weight: 500;
+.footer__link {
+  min-width: 200px;
 }
-.navigation__link:hover {
-  color: var(--cream);
-}
-.button__rounded-right {
-  width: 100%;
-  height: 50px;
-  font-size: 14px;
-  background-color: var(--tea-green);
-  border: none;
-  border-left: none;
-  --radius: 20px;
-  border-radius: 0 var(--radius) var(--radius) 0;
-  cursor: pointer;
-  padding: 0;
-  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25);
-}
-.button__rounded-right:active {
+.footer__link:link:not(:hover):not(:active) {
   box-shadow: none;
 }
-.navigation__link {
-  box-sizing: border-box;
-  padding: calc((50px - (14px + 4px)) / 2) 0px;
-  display: block;
-  width: 100%;
-  height: 100%;
+footer.footer .footer__link:focus,
+footer.footer .footer__link:hover,
+footer.footer .footer__link:active.btn:active {
+  border-color: #00000000;
+  background-color: #0cb7cd67;
 }
-/* UNUSED */
+
+/* END STYLES FOR FOOTER */
 
 /* GLOBAL COMPONENTS */
 .main {
   padding: 25px;
+  flex: 1;
 }
 @media (min-width: 576px) {
   .main {
@@ -370,8 +348,8 @@ body {
 
 ._input-group {
   display: flex;
-  flex-flow: column;
-  align-items: start;
+  flex-direction: column;
+  align-items: stretch;
   gap: 2px;
   width: 100%;
 }
@@ -381,14 +359,16 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-select.form-select {
+select.form-select,
+input.form-control,
+textarea.form-control {
   width: 100%;
   border: 1px solid #c5c0c0;
 }
 @media (min-width: 576px) {
   ._input-group {
-    flex-flow: row;
-    align-items: center;
+    flex-direction: row;
+    align-items: stretch;
     gap: 0;
     border: 1px solid #c5c0c0;
     border-radius: 7px;
@@ -401,11 +381,19 @@ select.form-select {
     white-space: nowrap;
     background-color: #f0f0f07a;
     font-weight: 500;
-    padding: 7px 10px;
     border-right: 1px solid #c5c0c0;
     border-radius: 7px 0 0 7px;
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
-  select.form-select {
+  ._input-group__label,
+  input[type="file"].form-control {
+    padding: 7px 10px;
+  }
+  select.form-select,
+  input.form-control,
+  textarea.form-control {
     flex: 1;
     padding: 0;
     padding-left: 5px;
@@ -428,12 +416,12 @@ select.form-select {
   font-size: 18px;
   padding: 20px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .main--home {
     grid-template-areas:
       "main-title--home  main-home__aside"
       "main-home__column main-home__aside";
-    padding: 0 5%;
+    padding: 5% 10%;
   }
 }
 .main-title--home {
@@ -441,7 +429,7 @@ select.form-select {
   font-size: 2rem;
   width: 100%;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .main-title--home {
     align-self: end;
   }
@@ -449,20 +437,20 @@ select.form-select {
 .main-home__column {
   grid-area: main-home__column;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   align-items: start;
   gap: 20px;
 }
 .main-home__text-column {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   gap: 5px;
   font-size: 1rem;
 }
 .main-home__link#contactButton {
   align-self: center;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .main-home__link#contactButton {
     width: 175px;
     align-self: flex-end;
@@ -471,15 +459,16 @@ select.form-select {
 .main-home__shortcut-buttons {
   width: 100%;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   gap: 5px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .main-home__shortcut-buttons {
-    flex-flow: row;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
     gap: 30px;
   }
 }
@@ -487,9 +476,14 @@ select.form-select {
   width: 100%;
   display: flex;
   flex: 50%;
-  flex-flow: column;
+  flex-direction: column;
   align-items: center;
   gap: 2px;
+}
+@media (min-width: 768px) {
+  .main-home__button-text-container {
+    flex: 0 1 300px;
+  }
 }
 .main-home__aside {
   grid-area: main-home__aside;
@@ -500,16 +494,23 @@ select.form-select {
   height: 100%;
   object-fit: cover;
 }
-.main-home__link:link,
-.main-home__link:visited {
+.main-home__link-label {
+  text-align: center;
+}
+.main-home__link {
   width: 100%;
-  color: #1b1b1b;
-  font-weight: 600;
   background-color: var(--hunyadi-yellow);
 }
-.main-home__link:hover {
-  color: #c5c0c0;
-  background-color: var(--asparagus);
+@media (min-width: 576px) and (max-width: 767px) {
+  .main-home__link {
+    width: 300px;
+  }
+}
+.main-home__link:focus,
+.main-home__link:hover,
+.main-home__link:active.btn:active {
+  background-color: rgba(237, 180, 88, 0.5);
+  border-color: var(--hunyadi-yellow);
 }
 /* END STYLING MAIN */
 
@@ -521,7 +522,7 @@ select.form-select {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  flex-flow: column;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -536,7 +537,7 @@ select.form-select {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-flow: column;
+  flex-direction: column;
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
@@ -612,7 +613,7 @@ select.form-select {
   }
   .photocard {
     height: 60vh;
-    flex-flow: row;
+    flex-direction: row;
     justify-content: center;
     gap: 10px;
   }
@@ -626,7 +627,6 @@ select.form-select {
   }
 }
 /* END STYLES FOR GALLERY */
-
 
 /* STYLING REUSABLE BUTTONS */
 .other-buttons {
@@ -654,30 +654,35 @@ select.form-select {
 /* END REUSABLE BUTTONS */
 
 /* STYLING CONTACT SECTION */
-#contact-main {
-  text-align: end;
+.main--contact {
+  flex: 0 1 800px;
+  margin: 0 auto;
 }
-.form-label-container {
-  margin-bottom: 10px;
-  text-align: start;
+.main-title--contact {
+  margin-bottom: 15px;
 }
-.form-label-container > label {
-  width: 35%;
-  vertical-align: top;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
 }
-.form-label-container > input,
-.form-label-container > textarea {
-  width: 60%;
+@media (min-width: 576px) {
+  .contact-form {
+    gap: 10px;
+  }
 }
-.form-label-container > label,
-.form-label-container > input {
-  display: inline-block;
+.contact-form__submit-button {
+  align-self: flex-end;
+  background-color: var(--tea-green);
+  padding-left: 30px;
+  padding-right: 30px;
 }
-#comment-textarea {
-  width: 100%;
-}
-#submit-button {
-  margin-top: 20px;
+.contact-form__submit-button:hover,
+.contact-form__submit-button:active.btn:active,
+.contact-form__submit-button:focus {
+  background-color: rgba(191, 216, 189, 0.578);
+  border-color: var(--tea-green);
 }
 /* END STYLES OF CONTACT SECTION */
 
@@ -687,32 +692,34 @@ select.form-select {
 }
 .main-about__section {
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 .main-about__section-title {
   margin-bottom: 5px;
 }
 .main-about__photo-section {
+  align-self: center;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+  max-width: 400px;
 }
-.about__team-photo {
-  margin-bottom: 10px;
+.main-about__photo-section-title {
+  font-size: 20px;
+  font-weight: 600;
 }
-.about__team-photo > * {
-  text-align: center;
+.main-about__photo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
 }
-.about__team-photo > img {
-  display: block;
-  margin: 0 auto;
-  max-width: 50%;
+.main-about__photo-caption {
+  font-size: 13px;
 }
-.photo__title {
-  margin: 0;
-}
-.photo__caption {
-  font-size: 10px;
-}
+/* END STYLES OF ABOUT SECTION */
 
 /* GLOBAL UTILITY STYLES AND SOME BOOTSTRAP OVERRIDES */
 .centers-children {
@@ -720,9 +727,22 @@ select.form-select {
   justify-content: center;
   align-items: center;
 }
+/* Bootstrap btn overrides */
 .btn {
   box-shadow: 0px 8px 15px -3px rgba(0, 0, 0, 0.15);
+  border: 2px solid #00000000;
+  color: #272727;
+  font-weight: 500;
 }
-.btn--rounded {
+/* Own button styles */
+.button--link:focus,
+.button--link:hover,
+.button--link:active {
+  color: #222222;
+  font-weight: 600;
+  border-width: 2px;
+  border-style: solid;
+}
+.button--rounded {
   border-radius: 20px;
 }
