@@ -1,15 +1,10 @@
 /* RESETS AND GLOBAL STYLES */
 * {
   font-family: "Open Sans", sans-serif;
-  --outer-space: #36413eff;
   --cream: #edeec9ff;
   --tea-green: #bfd8bdff;
-  --davys-gray: #5d5e60ff;
   --blue-munsell: #0892a5ff;
-  --chestnut: #a24936ff;
-  --powder-blue: #95b8d1ff;
   --hunyadi-yellow: #edb458ff;
-  --jet: #282b28ff;
   --asparagus: #68a357ff;
   margin: 0;
   padding: 0;
