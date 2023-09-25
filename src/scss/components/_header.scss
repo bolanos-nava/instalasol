@@ -1,37 +1,46 @@
 @import "../mixins";
 
 .header {
-  @include flex($justify-c: space-around, $align-i: center, $gap: 5%);
+  @include flex(row, space-around, center, 5%);
   width: 100%;
   padding: 5px 0;
   position: relative;
   background-color: map-get($colors, asparagus);
-  &__buttons-container {
-    flex: 1 0 20%;
-    @include flex(row, center, center);
-    &--social {
-      gap: 10px;
+  &__button {
+    &s {
+      flex: 1 0 20%;
+      @include flex(row, center, center);
+      &--social {
+        gap: 10px;
+      }
     }
   }
 
-  &__logo-container {
-    flex: 0 0 200px;
-    height: 100%;
-    padding: 5px 10px;
-  }
   &__logo {
-    max-height: 50px;
-  }
+    &-container {
+      flex: 0 0 200px;
+      height: 100%;
+      padding: 5px 10px;
+    }
 
-  &__titles {
-    flex: 1 0 40%;
-    @include flex(column, center, center, 2px);
-    @media (min-width: map-get($breakpoints, tablet-min)) {
-      @include flex(column, $gap: 15px);
+    & {
+      max-height: 50px;
     }
   }
+
   &__title {
-    text-align: center;
+    &s {
+      flex: 1 0 40%;
+      @include flex(column, center, center, 2px);
+      @media (min-width: map-get($breakpoints, tablet-min)) {
+        @include flex(column, $gap: 15px);
+      }
+    }
+
+    & {
+      text-align: center;
+    }
+
     &--main {
       font-size: 1.6rem;
     }
@@ -40,8 +49,10 @@
     }
   }
 
-  &__social-icon {
-    font-size: 1.3rem;
-    color: #000000;
+  &__icon {
+    &-social {
+      font-size: 1.3rem;
+      color: #000000;
+    }
   }
 }

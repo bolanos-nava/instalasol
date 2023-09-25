@@ -35,7 +35,7 @@
   }
 
   &__list {
-    @include flex(column, $justify-c: center, $gap: 20px);
+    @include flex(column, center, $gap: 20px);
   }
 
   &__link {
@@ -102,12 +102,12 @@
       padding: 10px 0;
 
       &-element {
-        @include flex($justify-c: center, $align-i: center);
+        @include flex(row, center, center);
       }
     }
 
     &__link {
-      @include flex($justify-c: center);
+      @include flex(row, center);
       padding: 5px;
 
       &-text {

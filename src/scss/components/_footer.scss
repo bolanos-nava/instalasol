@@ -1,24 +1,22 @@
 @import "../mixins";
 
 .footer {
-  @include flex(
-    row,
-    center,
-    center,
-    $flex: 0
-  ); // footer can't stretch nor shrink
+  // footer can't stretch nor shrink
+  @include flex(row, center, center, $flex: 0);
   background-color: map-get($colors, asparagus);
   padding: 10px; // its size will be determined automatically by the size of the content and this padding
 
-  &__links-list {
-    @include flex($justify-c: center);
-  }
-
   &__link {
-    min-width: 200px;
+    &s {
+      @include flex(row, center);
+    }
 
-    &:link:not(:hover):not(:active) {
-      box-shadow: none;
+    & {
+      min-width: 200px;
+
+      &:link:not(:hover):not(:active) {
+        box-shadow: none;
+      }
     }
   }
 }
@@ -38,7 +36,7 @@ footer.footer {
   &,
   &:visited {
     cursor: pointer;
-    @include flex($justify-c: center, $align-i: center);
+    @include flex(row, center, center);
     @include position(fixed, $left: 98%, $bottom: 65px, $right: 0);
     @include sizes(45px, 45px);
     transform: translateX(-100%);

@@ -1,0 +1,53 @@
+@use "sass:selector";
+@import "../mixins";
+
+._input-group {
+  @include flex(column, $align-i: stretch, $gap: 2px);
+  width: 100%;
+  $border-radius: 7px;
+  @media (min-width: map-get($breakpoints, mobile-min)) {
+    @include flex(row, $gap: 0);
+    border: 1px solid map-get($colors, coco-gray);
+    border-radius: $border-radius;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    @media (min-width: map-get($breakpoints, mobile-min)) {
+      font-size: initial;
+      font-weight: 500;
+      text-transform: initial;
+      letter-spacing: initial;
+      white-space: nowrap;
+      background-color: map-get($colors, coco-gray-dark);
+      border-right: 1px solid map-get($colors, coco-gray);
+      border-radius: $border-radius 0 0 $border-radius;
+      @include flex(row, center, center);
+
+      @at-root {
+        &,
+        input[type="file"].form-control {
+          padding: 7px 10px;
+        }
+      }
+    }
+  }
+}
+
+select.form-select,
+input.form-control,
+textarea.form-control {
+  width: 100%;
+  border: 1px solid map-get($colors, coco-gray);
+
+  @media (min-width: map-get($breakpoints, mobile-min)) {
+    flex: 1;
+    padding: 0;
+    padding-left: 5px;
+    border: none;
+  }
+}

@@ -1,0 +1,11 @@
+.main {
+  flex: 1;
+  padding: 25px;
+  @media (min-width: map-get($breakpoints, mobile-min)) {
+    padding: 15px;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+}

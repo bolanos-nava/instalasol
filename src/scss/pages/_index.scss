@@ -1,0 +1,102 @@
+@import "../mixins";
+
+.main {
+  &--homepage {
+    display: grid;
+    grid-template-areas:
+      "title    title"
+      "content  aside";
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: 60fr 40fr;
+    row-gap: 10px;
+    column-gap: 15px;
+    align-items: start;
+    font-size: 18px;
+    padding: 20px;
+
+    @media (min-width: map-get($breakpoints, tablet-min)) {
+      grid-template-areas:
+        "title    aside"
+        "content  aside";
+      padding: 5% 10%;
+    }
+
+    &__title {
+      grid-area: title;
+      font-size: 2rem;
+      width: 100%;
+
+      @media (min-width: map-get($breakpoints, tablet-min)) {
+        align-self: end;
+      }
+    }
+
+    &__content {
+      grid-area: content;
+      @include flex(column, $align-i: start, $gap: 20px);
+
+      &-text {
+        @include flex(column, $gap: 5px);
+        font-size: 1rem;
+      }
+    }
+
+    &__link {
+      &#contactButton {
+        align-self: center;
+
+        @media (min-width: map-get($breakpoints, tablet-min)) {
+          width: 175px;
+          align-self: flex-end;
+        }
+      }
+
+      &s {
+        width: 100%;
+        @include flex(column, space-around, center, 5px);
+
+        @media (min-width: map-get($breakpoints, tablet-min)) {
+          @include flex(row, center, end, 30px);
+        }
+      }
+
+      &-container {
+        width: 100%;
+        @include flex(column, $align-i: center, $gap: 2px, $flex: 50%);
+
+        @media (min-width: map-get($breakpoints, tablet-min)) {
+          flex: 0 1 300px;
+        }
+      }
+
+      &-label {
+        text-align: center;
+      }
+
+      & {
+        width: 100%;
+        background-color: map-get($colors, yellow);
+
+        @media (min-width: map-get($breakpoints, mobile-min)) and (max-width: map-get($breakpoints, tablet-max)) {
+          width: 300px;
+        }
+      }
+
+      &:focus,
+      &:hover,
+      &:active.btn:active {
+        background-color: map-get($colors, yellow-dark);
+        border-color: map-get($colors, yellow);
+      }
+    }
+
+    &__aside {
+      grid-area: aside;
+      height: 100%;
+      &-img {
+        max-height: 60vh;
+        object-fit: cover;
+      }
+    }
+  }
+}

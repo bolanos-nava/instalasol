@@ -5,22 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- FontAwesome icons -->
-    <script
-      defer
-      src="src/assets/fontawesome/js/brands.js"
-    ></script>
-    <script
-      defer
-      src="src/assets/fontawesome/js/regular.js"
-    ></script>
-    <script
-      defer
-      src="src/assets/fontawesome/js/solid.js"
-    ></script>
-    <script
-      defer
-      src="src/assets/fontawesome/js/fontawesome.js"
-    ></script>
+    <script defer src="src/assets/fontawesome/js/brands.js"></script>
+    <script defer src="src/assets/fontawesome/js/regular.js"></script>
+    <script defer src="src/assets/fontawesome/js/solid.js"></script>
+    <script defer src="src/assets/fontawesome/js/fontawesome.js"></script>
 
     <!-- Google Fonts import -->
 
@@ -46,7 +34,7 @@
 
   <body>
     <header class="header" id="header">
-      <div class="header__buttons-container navbar" id="navbarTogglerContainer">
+      <div class="header__buttons navbar" id="navbarTogglerContainer">
         <button
           class="navibar__toggler navbar-toggler"
           type="button"
@@ -76,35 +64,35 @@
       </div>
 
       <!-- facebook, whatsapp and email icons -->
-      <ul class="header__buttons-container header__buttons-container--social">
+      <ul class="header__buttons header__buttons--social">
         <li>
           <a
-            class="header__social-button"
+            class="header__button-social"
             href="https://www.facebook.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="header__social-icon fa-brands fa-facebook"></i>
+            <i class="header__icon-social fa-brands fa-facebook"></i>
           </a>
         </li>
         <li>
           <a
-            class="social-buttons__button"
+            class="header__button-social"
             href="https://wa.me/+528333016249"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="header__social-icon fa-brands fa-whatsapp"></i>
+            <i class="header__icon-social fa-brands fa-whatsapp"></i>
           </a>
         </li>
         <li>
           <a
-            class="social-buttons__button"
+            class="header__button-social"
             href="mailto:parito.2000@hotmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="header__social-icon fa-solid fa-envelope"></i>
+            <i class="header__icon-social fa-solid fa-envelope"></i>
           </a>
         </li>
       </ul>
@@ -184,12 +172,12 @@
         </ul>
       </nav>
       <div class="centers-children">
-        <main class="main main--home">
-          <h2 class="main-title main-title--home">
+        <main class="main main--homepage">
+          <h2 class="main__title main--homepage__title">
             Soluciones a tu medida para ahorrar en tu consumo de electricidad
           </h2>
-          <div class="main-home__column">
-            <div class="main-home__text-column">
+          <div class="main--homepage__content">
+            <div class="main--homepage__content-text">
               <p>
                 Somos una empresa dedicada a la instalación de sistemas de
                 paneles solares, siempre ofreciendo un servicio con la mejor
@@ -199,38 +187,38 @@
                 Solo contáctanos enviando tu recibo de CFE para generarte una
                 cotización de acuerdo con tu consumo.
               </p>
-                <a
-                  class="main-home__link btn button--link button--rounded"
-                  id="contactButton"
-                  role="button"
-                  href="/pages/contact.html"
-                  >Contáctanos</a
-                >
+              <a
+                class="main--homepage__link btn button--link button--rounded"
+                id="contactButton"
+                role="button"
+                href="/pages/contact.html"
+                >Contáctanos</a
+              >
             </div>
-            <div class="main-home__shortcut-buttons">
-              <div class="main-home__button-text-container">
-                <p class="main-home__link-label">Conoce nuestro trabajo</p>
-                  <a
-                    class="main-home__link btn button--link button--rounded"
-                    role="button"
-                    href="/pages/project-gallery.html"
-                    >Proyectos</a
-                  >
+            <div class="main--homepage__links">
+              <div class="main--homepage__link-container">
+                <p class="main--homepage__link-label">Conoce nuestro trabajo</p>
+                <a
+                  class="main--homepage__link btn button--link button--rounded"
+                  role="button"
+                  href="/pages/project-gallery.html"
+                  >Proyectos</a
+                >
               </div>
-              <div class="main-home__button-text-container">
-                <p class="main-home__link-label">Conoce a la empresa</p>
-                  <a
-                    class="main-home__link btn button--link button--rounded"
-                    role="button"
-                    href="/pages/about-company.html"
-                    >Conócenos</a
-                  >
+              <div class="main--homepage__link-container">
+                <p class="main--homepage__link-label">Conoce a la empresa</p>
+                <a
+                  class="main--homepage__link btn button--link button--rounded"
+                  role="button"
+                  href="/pages/about-company.html"
+                  >Conócenos</a
+                >
               </div>
             </div>
           </div>
-          <aside class="main-home__aside centers-children">
+          <aside class="main--homepage__aside centers-children">
             <img
-              class="main-home__side-img"
+              class="main--homepage__aside-img"
               src="src/assets/images/dummy_400x1000.png"
               alt="Imagen decorativa que se funde con el fondo"
             />
@@ -243,8 +231,8 @@
       <a href="#header" class="go-to-top-button">
         <i class="fa-solid fa-arrow-up"></i>
       </a>
-      <ul class="footer__links-list">
-        <li class="footer__links-element">
+      <ul class="footer__links">
+        <li class="footer__link-container">
           <a
             role="button"
             class="footer__link btn button--link button--rounded"
@@ -252,7 +240,7 @@
             >Copyright</a
           >
         </li>
-        <li class="footer__links-element">
+        <li class="footer__link-container">
           <a
             class="footer__link btn button--link button--rounded"
             href="pages/privacy-notice.html"
