@@ -1,0 +1,129 @@
+@use "sass:selector";
+@import "../mixins";
+
+.navibar {
+  display: none;
+  background-color: map-get($colors, cream);
+  @media (min-width: map-get($breakpoints, tablet-min)) {
+    flex: 0 0 200px;
+    display: block;
+    padding-top: 100px;
+    width: 200px;
+  }
+
+  & * {
+    color: #4c4c4c;
+    font-weight: 600;
+  }
+
+  &#navbarTogglerContainer,
+  &--header {
+    @media (min-width: map-get($breakpoints, tablet-min)) {
+      display: none;
+    }
+  }
+
+  &__toggler {
+    &,
+    &:focus {
+      @include box-shadow(
+        false,
+        $radii: (blur: 0, spread: 0.5px),
+        $color: (color-channel: #000, alpha-channel: 0.184)
+      );
+    }
+  }
+
+  &__list {
+    @include flex(column, $justify-c: center, $gap: 20px);
+  }
+
+  &__link {
+    @include flex($align-i: center, $flex: 0 1 300px);
+    width: 95%;
+    padding: 12px;
+    padding-left: 5px;
+    border-radius: 0 20px 20px 0;
+
+    &:hover,
+    &.active-link {
+      @include box-shadow(
+        false,
+        $offsets: (x: 0, y: 2px),
+        $radii: (blur: 5px, spread: -2px),
+        $color: (color-channel: #000, alpha-channel: 0.25)
+      );
+    }
+
+    &:hover,
+    &-text {
+      transition: all 0.5s ease-in-out;
+    }
+
+    &:not(&.active-link):hover {
+      background-color: map-get($colors, blue-dark);
+    }
+
+    &:hover > &-text {
+      transform: translateX(10px);
+    }
+
+    &.active-link {
+      width: 100%;
+      @include flex($justify-c: center);
+      background-color: map-get($colors, green);
+      cursor: default;
+    }
+  }
+
+  &--header {
+    @include flex();
+    border-radius: 0 0 10px 10px;
+    @include box-shadow(
+      false,
+      $offsets: (x: 0, y: 8px),
+      $radii: (blur: 15px, spread: -3px),
+      $color: (color-channel: #000, alpha-channel: 0.15)
+    );
+
+    &--absolute {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    &__list {
+      &,
+      &-element {
+        width: 100%;
+      }
+      @include flex(column, $align-i: center, $gap: 5px);
+      padding: 10px 0;
+
+      &-element {
+        @include flex($justify-c: center, $align-i: center);
+      }
+    }
+
+    &__link {
+      @include flex($justify-c: center);
+      padding: 5px;
+
+      &-text {
+        text-align: center;
+      }
+
+      &:hover,
+      &-text {
+        transition-property: background-color, transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+      }
+
+      &:hover > &-text {
+        transform: translateY(-1px);
+      }
+    }
+  }
+}

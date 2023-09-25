@@ -1,0 +1,56 @@
+@import "../mixins";
+
+.footer {
+  @include flex(
+    row,
+    center,
+    center,
+    $flex: 0
+  ); // footer can't stretch nor shrink
+  background-color: map-get($colors, asparagus);
+  padding: 10px; // its size will be determined automatically by the size of the content and this padding
+
+  &__links-list {
+    @include flex($justify-c: center);
+  }
+
+  &__link {
+    min-width: 200px;
+
+    &:link:not(:hover):not(:active) {
+      box-shadow: none;
+    }
+  }
+}
+
+footer.footer {
+  & .footer__link {
+    &:focus,
+    &:hover,
+    &:active.btn:active {
+      border-color: #00000000;
+      background-color: map-get($colors, blue-dark);
+    }
+  }
+}
+
+.go-to-top-button {
+  &,
+  &:visited {
+    cursor: pointer;
+    @include flex($justify-c: center, $align-i: center);
+    @include position(fixed, $left: 98%, $bottom: 65px, $right: 0);
+    @include sizes(45px, 45px);
+    transform: translateX(-100%);
+    border-radius: 50%;
+    font-size: 30px;
+    color: #000;
+    background-color: map-get($colors, blue);
+    @include box-shadow(
+      true,
+      $offsets: (x: 0, y: -1px),
+      $radii: (blur: 6px, spread: 3.2px),
+      $color: (color-channel: #000, alpha-channel: 0.25)
+    );
+  }
+}

@@ -1,0 +1,47 @@
+@import "../mixins";
+
+.header {
+  @include flex($justify-c: space-around, $align-i: center, $gap: 5%);
+  width: 100%;
+  padding: 5px 0;
+  position: relative;
+  background-color: map-get($colors, asparagus);
+  &__buttons-container {
+    flex: 1 0 20%;
+    @include flex(row, center, center);
+    &--social {
+      gap: 10px;
+    }
+  }
+
+  &__logo-container {
+    flex: 0 0 200px;
+    height: 100%;
+    padding: 5px 10px;
+  }
+  &__logo {
+    max-height: 50px;
+  }
+
+  &__titles {
+    flex: 1 0 40%;
+    @include flex(column, center, center, 2px);
+    @media (min-width: map-get($breakpoints, tablet-min)) {
+      @include flex(column, $gap: 15px);
+    }
+  }
+  &__title {
+    text-align: center;
+    &--main {
+      font-size: 1.6rem;
+    }
+    &--secondary {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__social-icon {
+    font-size: 1.3rem;
+    color: #000000;
+  }
+}
