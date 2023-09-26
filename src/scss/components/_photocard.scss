@@ -1,0 +1,65 @@
+.photocard {
+  &s {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 20px;
+    @media (min-width: 400px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    @media (min-width: map-get($breakpoints, mobile-min)) {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      & {
+        padding: 20px;
+      }
+    }
+    @media (min-width: map-get($breakpoints, tablet-min)) {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    @media (orientation: landscape) and (max-height: map-get($breakpoints, mobile-max)) {
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    }
+  }
+
+  & {
+    height: 80vh;
+    @include flex(column, flex-start, center, 20px);
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: map-get($colors, yellow);
+    @include box-shadow(
+      false,
+      $offsets: (x: 0, y: 2px),
+      $radii: (blur: 7px, spread: 0),
+      $color: (color-channel: #000, alpha-channel: 0.34)
+    );
+    @media (min-height: map-get($breakpoints, tablet-min)) {
+      height: 800px;
+    }
+    @media (orientation: landscape) and (max-height: map-get($breakpoints, mobile-max)) {
+      height: 60vh;
+      @include flex(row, center, $gap: 10px);
+    }
+  }
+
+  &__footer {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 10px;
+    font-weight: 400;
+    border-radius: 8px;
+    @include box-shadow(
+      true,
+      $offsets: (x: 0, y: -2px),
+      $radii: (blur: 18px, spread: -2px),
+      $color: (color-channel: #000, alpha-channel: 0.343)
+    );
+
+    @media (orientation: landscape) and (max-height: map-get($breakpoints, mobile-max)) {
+      flex: 1;
+      height: 100%;
+    }
+  }
+}

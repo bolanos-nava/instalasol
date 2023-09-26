@@ -1,0 +1,10 @@
+@import "../mixins";
+
+.main {
+  &--gallery {
+    &__selects {
+      width: 100%;
+      @include flex(column, space-between, $gap: 12px);
+    }
+  }
+}

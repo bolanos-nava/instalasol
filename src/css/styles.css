@@ -348,6 +348,7 @@ footer.footer .footer__link:focus, footer.footer .footer__link:hover, footer.foo
 }
 .main__title {
   font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 ._input-group {
@@ -430,6 +431,7 @@ textarea.form-control {
   }
 }
 .main--homepage__title {
+  margin: 0;
   grid-area: title;
   font-size: 2rem;
   width: 100%;
@@ -518,11 +520,52 @@ textarea.form-control {
 
 /* END STYLING MAIN */
 /* STYLES FOR GALLERY */
+.main--gallery__selects {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+._carousel {
+  flex: 0 1 20%;
+  height: 40%;
+}
+@media (min-width: 576px) {
+  ._carousel {
+    flex: 0 1 30%;
+    height: 50%;
+  }
+}
+@media (orientation: landscape) and (max-height: 575px) {
+  ._carousel {
+    flex: 0 0 45%;
+    height: 100%;
+  }
+}
+._carousel__photos, ._carousel__photo-container {
+  height: 100%;
+}
+._carousel__photos, ._carousel__photo-container, ._carousel__photo {
+  border-radius: 10px;
+}
+._carousel__photos {
+  filter: drop-shadow(0 0 15px rgba(29, 27, 27, 0.5));
+  display: flex;
+  gap: 15px;
+}
+._carousel__photo {
+  display: block;
+  height: 100%;
+  aspect-ratio: 4/3;
+}
+
 .main-title--gallery {
   margin-bottom: 15px;
 }
 
-.main-gallery__select-group {
+.main-gallery__select {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -530,7 +573,7 @@ textarea.form-control {
   gap: 12px;
 }
 
-.photocards__container {
+.photocards {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -555,18 +598,18 @@ textarea.form-control {
   height: 40%;
 }
 
-._carousel__photos-container,
+._carousel__photos,
 ._carousel__photo-container {
   height: 100%;
 }
 
-._carousel__photos-container,
+._carousel__photos,
 ._carousel__photo-container,
 ._carousel__photo {
   border-radius: 10px;
 }
 
-._carousel__photos-container {
+._carousel__photos {
   filter: drop-shadow(0 0 15px rgba(29, 27, 27, 0.5));
   display: flex;
   gap: 15px;
@@ -592,12 +635,12 @@ textarea.form-control {
 }
 
 @media (min-width: 400px) {
-  .photocards__container {
+  .photocards {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 @media (min-width: 576px) {
-  .photocards__container {
+  .photocards {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
   .photocard {
@@ -609,7 +652,7 @@ textarea.form-control {
   }
 }
 @media (min-width: 768px) {
-  .photocards__container {
+  .photocards {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }
@@ -619,7 +662,7 @@ textarea.form-control {
   }
 }
 @media (orientation: landscape) and (max-height: 575px) {
-  .photocards__container {
+  .photocards {
     grid-template-columns: repeat(auto-fit, 1fr);
   }
   .photocard {

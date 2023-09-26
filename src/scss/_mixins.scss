@@ -5,20 +5,6 @@
   $gap: unset,
   $flex: unset
 ) {
-  // $flex-properties: (
-  //   flex: $flex,
-  //   display: flex,
-  //   flex-flow: $flex-flow,
-  //   justify-content: $justify-c,
-  //   align-items: $align-i,
-  //   gap: $gap,
-  // );
-  // @each $flex-property, $value in $flex-properties {
-  //   @if $value != unset {
-  //     #{$flex-property}: $value;
-  //   }
-  // }
-
   @include assign-properties-if-not-unset(
     $properties: (
       flex: $flex,
@@ -69,19 +55,6 @@
   $bottom: unset,
   $left: unset
 ) {
-  // $position-properties: (
-  //   position: $position,
-  //   top: $top,
-  //   right: $right,
-  //   bottom: $bottom,
-  //   left: $left,
-  // );
-
-  // @each $position-property, $value in $position-properties {
-  //   @if $value != unset {
-  //     #{$position-property}: $value;
-  //   }
-  // }
 
   @include assign-properties-if-not-unset(
     $properties: (

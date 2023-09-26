@@ -1,0 +1,37 @@
+._carousel {
+  flex: 0 1 20%;
+  height: 40%;
+
+  @media (min-width: map-get($breakpoints, mobile-min)) {
+    flex: 0 1 30%;
+    height: 50%;
+  }
+  @media (orientation: landscape) and (max-height: map-get($breakpoints, mobile-max)) {
+    flex: 0 0 45%;
+    height: 100%;
+  }
+
+  &__photo {
+    &s,
+    &-container {
+      height: 100%;
+    }
+
+    &s,
+    &-container,
+    & {
+      border-radius: 10px;
+    }
+
+    &s {
+      filter: drop-shadow(0 0 15px rgba(29, 27, 27, 0.5));
+      @include flex($gap: 15px);
+    }
+
+    & {
+        display: block;
+        height: 100%;
+        aspect-ratio: 4 / 3;
+    }
+  }
+}
