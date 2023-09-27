@@ -16,10 +16,12 @@
     font-weight: 600;
   }
 
-  &#navbarTogglerContainer,
-  &--header {
-    @media (min-width: map-get($breakpoints, tablet-min)) {
-      display: none;
+  @at-root {
+    .navbar#navbarTogglerContainer,
+    &--header {
+      @media (min-width: map-get($breakpoints, tablet-min)) {
+        display: none;
+      }
     }
   }
 

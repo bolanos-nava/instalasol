@@ -22,10 +22,10 @@
     }
 
     &__title {
-      margin: 0;
       grid-area: title;
       font-size: 2rem;
       width: 100%;
+      margin: 0; // overriding styles in .main__title
 
       @media (min-width: map-get($breakpoints, tablet-min)) {
         align-self: end;

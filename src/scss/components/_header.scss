@@ -24,6 +24,7 @@
     }
 
     & {
+      object-fit: contain;
       max-height: 50px;
     }
   }
@@ -33,7 +34,7 @@
       flex: 1 0 40%;
       @include flex(column, center, center, 2px);
       @media (min-width: map-get($breakpoints, tablet-min)) {
-        @include flex(column, $gap: 15px);
+        @include flex(row, $gap: 15px);
       }
     }
 
