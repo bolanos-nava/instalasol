@@ -1,0 +1,13 @@
+@import "../mixins";
+
+.btn {
+  @include box-shadow(
+    false,
+    $offsets: (x: 0, y: 8),
+    $radii: (blur: 15px, spread: -3px),
+    $color: (color-channel: #000, alpha-channel: 0.15)
+  );
+  border: 2px solid #00000000;
+  color: #272727;
+  font-weight: 500;
+}

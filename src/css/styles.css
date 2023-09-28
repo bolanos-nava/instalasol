@@ -281,6 +281,7 @@ img {
   align-items: center;
   background-color: #68a357;
   padding: 10px;
+  display: none;
 }
 .footer__links {
   display: flex;
@@ -530,7 +531,7 @@ textarea.form-control {
 }
 @media (orientation: landscape) and (max-height: 575px) {
   .photocards {
-    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 .photocard {
@@ -558,7 +559,7 @@ textarea.form-control {
 }
 @media (orientation: landscape) and (max-height: 575px) {
   .photocard {
-    height: 60vh;
+    height: 20rem;
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -581,20 +582,39 @@ textarea.form-control {
   }
 }
 
-._carousel {
-  flex: 0 1 20%;
-  height: 40%;
+._carousel-container {
+  width: 100%;
+  max-height: 50%;
 }
 @media (min-width: 576px) {
-  ._carousel {
-    flex: 0 1 30%;
-    height: 50%;
+  ._carousel-container {
+    max-height: 40%;
   }
 }
 @media (orientation: landscape) and (max-height: 575px) {
-  ._carousel {
-    flex: 0 0 45%;
+  ._carousel-container {
+    flex: 0 1 40%;
+    display: flex;
+    flex-flow: column;
+    justify-content: stretch;
+    align-items: center;
+    width: 40%;
     height: 100%;
+    max-height: 100%;
+  }
+}
+._carousel {
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+  aspect-ratio: 4/3;
+}
+@media (orientation: landscape) and (max-height: 575px) {
+  ._carousel {
+    margin: unset;
+    aspect-ratio: unset;
+    height: 100%;
+    width: 100%;
   }
 }
 ._carousel__photos, ._carousel__photo-container {
@@ -605,8 +625,6 @@ textarea.form-control {
 }
 ._carousel__photos {
   filter: drop-shadow(0 0 15px rgba(29, 27, 27, 0.5));
-  display: flex;
-  gap: 15px;
 }
 ._carousel__photo {
   display: block;
@@ -615,110 +633,59 @@ textarea.form-control {
 }
 
 /* END STYLES FOR GALLERY */
-/* STYLING REUSABLE BUTTONS */
-.other-buttons {
-  margin: 50px 0;
-  text-align: center;
-}
-
-.other-buttons > .text-button-container:first-child {
-  margin-right: 160px;
-}
-
-.other-buttons > .text-button-container {
-  text-align: center;
-  display: inline-block;
-}
-
-.button__rounded-both {
-  border: none;
-  border-radius: 30px;
-  height: 50px;
-  width: 200px;
-  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25);
-  font-size: 16px;
-}
-
-.button__rounded-both > .navigation__link {
-  padding: 14px 0;
-}
-
-/* END REUSABLE BUTTONS */
 /* STYLING CONTACT SECTION */
 .main--contact {
   flex: 0 1 800px;
   margin: 0 auto;
 }
-
-.main-title--contact {
-  margin-bottom: 15px;
-}
-
-.contact-form {
+.main--contact-form {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  flex-flow: column;
   align-items: center;
+  gap: 5px;
 }
-
 @media (min-width: 576px) {
-  .contact-form {
+  .main--contact-form {
     gap: 10px;
   }
 }
-.contact-form__submit-button {
+.main--contact-form__submit-button {
   align-self: flex-end;
   background-color: #bfd8bd;
   padding-left: 30px;
   padding-right: 30px;
 }
-
-.contact-form__submit-button:hover,
-.contact-form__submit-button:active.btn:active,
-.contact-form__submit-button:focus {
-  background-color: rgba(191, 216, 189, 0.578);
+.main--contact-form__submit-button:hover, .main--contact-form__submit-button:focus, .main--contact-form__submit-button:active.btn:active {
+  background-color: #a0c59d;
   border-color: #bfd8bd;
 }
 
 /* END STYLES OF CONTACT SECTION */
 /* STYLES OF ABOUT SECTION */
-.main-title--about {
-  margin-bottom: 15px;
+.main--contact {
+  flex: 0 1 800px;
+  margin: 0 auto;
 }
-
-.main-about__section {
-  margin-bottom: 10px;
+.main--contact-form {
   display: flex;
-  flex-direction: column;
-}
-
-.main-about__section-title {
-  margin-bottom: 5px;
-}
-
-.main-about__photo-section {
-  align-self: center;
-  display: flex;
-  flex-direction: column;
+  flex-flow: column;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 5px;
-  max-width: 400px;
+  gap: 5px;
 }
-
-.main-about__photo-section-title {
-  font-size: 20px;
-  font-weight: 600;
+@media (min-width: 576px) {
+  .main--contact-form {
+    gap: 10px;
+  }
 }
-
-.main-about__photo {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: cover;
+.main--contact-form__submit-button {
+  align-self: flex-end;
+  background-color: #bfd8bd;
+  padding-left: 30px;
+  padding-right: 30px;
 }
-
-.main-about__photo-caption {
-  font-size: 13px;
+.main--contact-form__submit-button:hover, .main--contact-form__submit-button:focus, .main--contact-form__submit-button:active.btn:active {
+  background-color: #a0c59d;
+  border-color: #bfd8bd;
 }
 
 /* END STYLES OF ABOUT SECTION */
@@ -731,22 +698,19 @@ textarea.form-control {
 
 /* Bootstrap btn overrides */
 .btn {
-  box-shadow: 0px 8px 15px -3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8 15px -3px rgba(0, 0, 0, 0.15);
   border: 2px solid rgba(0, 0, 0, 0);
   color: #272727;
   font-weight: 500;
 }
 
 /* Own button styles */
-.button--link:focus,
-.button--link:hover,
-.button--link:active {
+.button--link:focus, .button--link:hover, .button--link:active {
   color: #222222;
   font-weight: 600;
   border-width: 2px;
   border-style: solid;
 }
-
 .button--rounded {
   border-radius: 20px;
 }

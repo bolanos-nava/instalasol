@@ -14,7 +14,8 @@
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
     @media (orientation: landscape) and (max-height: map-get($breakpoints, mobile-max)) {
-      grid-template-columns: repeat(auto-fit, 1fr);
+      grid-template-columns: minmax(0, 1fr);
+      // grid-template-rows: repeat(auto-fit, minmax(200px, 400px));
     }
   }
 
@@ -38,7 +39,8 @@
       height: 800px;
     }
     @media (orientation: landscape) and (max-height: map-get($breakpoints, mobile-max)) {
-      height: 60vh;
+      height: 20rem;
+      // height: 100%;
       @include flex(row, center, $gap: 10px);
     }
   }

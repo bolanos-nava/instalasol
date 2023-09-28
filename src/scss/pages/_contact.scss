@@ -1,0 +1,29 @@
+@import "../mixins";
+
+.main {
+  &--contact {
+    flex: 0 1 800px;
+    margin: 0 auto;
+
+    &-form {
+      @include flex(column, $align-i: center, $gap: 5px);
+      @media (min-width: map-get($breakpoints, mobile-min)) {
+        gap: 10px;
+      }
+
+      &__submit-button {
+        align-self: flex-end;
+        background-color: map-get($colors, green);
+        padding-left: 30px;
+        padding-right: 30px;
+
+        &:hover,
+        &:focus,
+        &:active.btn:active {
+          background-color: map-get($colors, green-dark);
+          border-color: map-get($colors, green);
+        }
+      }
+    }
+  }
+}

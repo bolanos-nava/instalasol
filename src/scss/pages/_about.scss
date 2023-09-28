@@ -1,0 +1,37 @@
+@import "../mixins";
+
+.main {
+  &--about {
+    &__section {
+      margin-bottom: 10px;
+      @include flex(column);
+
+      &-title {
+        margin-bottom: 5px;
+      }
+    }
+
+    &__photo {
+      &-section {
+        align-self: center;
+        @include flex(column, center, center, 5px);
+        padding-bottom: 5px;
+        max-width: 400px;
+      }
+
+      &-title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      & {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      &-caption {
+        font-size: 13px;
+      }
+    }
+  }
+}

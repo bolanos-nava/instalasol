@@ -3,15 +3,12 @@
 @import "globals";
 @import "mixins";
 
-
-
 @import "components/shared-styles";
 @import "components/header";
 
 @import "components/navbars";
 
 @import "components/footer";
-
 
 @import "components/mains";
 @import "components/inputs";
@@ -21,210 +18,73 @@
 @import "pages/gallery";
 @import "components/photocard";
 @import "components/carousel";
-// .main--gallery__title {
-//   margin-bottom: 15px;
-// }
-// .main---gallery__selects {
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   flex-direction: column;
-//   gap: 12px;
-// }
-
-// .photocards {
-//   display: grid;
-//   gap: 20px;
-//   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-//   padding: 20px;
-// }
-// .photocard {
-//   height: 80vh;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-//   flex-direction: column;
-//   gap: 20px;
-//   padding: 20px;
-//   border-radius: 10px;
-//   background-color: map-get($colors, yellow);
-//   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.34);
-// }
-
-// ._carousel {
-//   flex: 0 1 20%;
-//   height: 40%;
-// }
-// ._carousel__photos,
-// ._carousel__photo-container {
-//   height: 100%;
-// }
-// ._carousel__photos,
-// ._carousel__photo-container,
-// ._carousel__photo {
-//   border-radius: 10px;
-// }
-// ._carousel__photos {
-//   filter: drop-shadow(0 0 15px rgba(29, 27, 27, 0.5));
-//   display: flex;
-//   gap: 15px;
-// }
-// ._carousel__photo {
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   aspect-ratio: 4 / 3;
-// }
-// .photocard__footer {
-//   flex: 1;
-//   overflow-y: scroll;
-//   overflow-x: hidden;
-//   scroll-behavior: smooth;
-//   padding: 10px;
-//   font-weight: 400;
-//   border-radius: 8px;
-//   box-shadow: inset 0px -2px 18px -2px rgba(0, 0, 0, 0.343);
-// }
-// @media (min-width: 400px) {
-//   .photocards {
-//     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-//   }
-// }
-// @media (min-width: 576px) {
-//   .photocards {
-//     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-//   }
-//   .photocard {
-//     padding: 20px;
-//   }
-//   ._carousel {
-//     flex: 0 1 30%;
-//     height: 50%;
-//   }
-// }
-// @media (min-width: 768px) {
-//   .photocards {
-//     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-//   }
-// }
-// @media (min-height: 768px) {
-//   .photocard {
-//     height: 800px;
-//   }
-// }
-// @media (orientation: landscape) and (max-height: 575px) {
-//   .photocards {
-//     grid-template-columns: repeat(auto-fit, 1fr);
-//   }
-//   .photocard {
-//     height: 60vh;
-//     flex-direction: row;
-//     justify-content: center;
-//     gap: 10px;
-//   }
-//   ._carousel {
-//     flex: 0 0 45%;
-//     height: 100%;
-//   }
-//   .photocard__footer {
-//     flex: 1;
-//     height: 100%;
-//   }
-// }
 /* END STYLES FOR GALLERY */
 
-/* STYLING REUSABLE BUTTONS */
-.other-buttons {
-  margin: 50px 0;
-  text-align: center;
-}
-.other-buttons > .text-button-container:first-child {
-  margin-right: 160px;
-}
-.other-buttons > .text-button-container {
-  text-align: center;
-  display: inline-block;
-}
-.button__rounded-both {
-  border: none;
-  border-radius: 30px;
-  height: 50px;
-  width: 200px;
-  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25);
-  font-size: 16px;
-}
-.button__rounded-both > .navigation__link {
-  padding: 14px 0;
-}
-/* END REUSABLE BUTTONS */
-
 /* STYLING CONTACT SECTION */
-.main--contact {
-  flex: 0 1 800px;
-  margin: 0 auto;
-}
-.main-title--contact {
-  margin-bottom: 15px;
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-}
-@media (min-width: 576px) {
-  .contact-form {
-    gap: 10px;
-  }
-}
-.contact-form__submit-button {
-  align-self: flex-end;
-  background-color: map-get($colors, green);
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.contact-form__submit-button:hover,
-.contact-form__submit-button:active.btn:active,
-.contact-form__submit-button:focus {
-  background-color: rgba(191, 216, 189, 0.578);
-  border-color: map-get($colors, green);
-}
+@import "pages/contact";
+// .main--contact {
+//   flex: 0 1 800px;
+//   margin: 0 auto;
+// }
+// .main-title--contact {
+//   margin-bottom: 15px;
+// }
+// .contact-form {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 5px;
+//   align-items: center;
+// }
+// @media (min-width: 576px) {
+//   .contact-form {
+//     gap: 10px;
+//   }
+// }
+// .contact-form__submit-button {
+//   align-self: flex-end;
+//   background-color: map-get($colors, green);
+//   padding-left: 30px;
+//   padding-right: 30px;
+// }
+// .contact-form__submit-button:hover,
+// .contact-form__submit-button:active.btn:active,
+// .contact-form__submit-button:focus {
+//   background-color: rgba(191, 216, 189, 0.578);
+//   border-color: map-get($colors, green);
+// }
 /* END STYLES OF CONTACT SECTION */
 
 /* STYLES OF ABOUT SECTION */
-.main-title--about {
-  margin-bottom: 15px;
-}
-.main-about__section {
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.main-about__section-title {
-  margin-bottom: 5px;
-}
-.main-about__photo-section {
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 5px;
-  max-width: 400px;
-}
-.main-about__photo-section-title {
-  font-size: 20px;
-  font-weight: 600;
-}
-.main-about__photo {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: cover;
-}
-.main-about__photo-caption {
-  font-size: 13px;
-}
+@import "pages/contact";
+// .main--about__section {
+//   margin-bottom: 10px;
+//   display: flex;
+//   flex-direction: column;
+// }
+// .main--about__section-title {
+//   margin-bottom: 5px;
+// }
+// .main--about__photo-section {
+//   align-self: center;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   padding-bottom: 5px;
+//   max-width: 400px;
+// }
+// .main--about__photo-section-title {
+//   font-size: 20px;
+//   font-weight: 600;
+// }
+// .main--about__photo {
+//   max-height: 100%;
+//   max-width: 100%;
+//   object-fit: cover;
+// }
+// .main--about__photo-caption {
+//   font-size: 13px;
+// }
 /* END STYLES OF ABOUT SECTION */
 
 /* GLOBAL UTILITY STYLES AND SOME BOOTSTRAP OVERRIDES */
@@ -234,21 +94,23 @@
   align-items: center;
 }
 /* Bootstrap btn overrides */
-.btn {
-  box-shadow: 0px 8px 15px -3px rgba(0, 0, 0, 0.15);
-  border: 2px solid #00000000;
-  color: #272727;
-  font-weight: 500;
-}
+@import "overrides/bootstrap-overrides";
+// .btn {
+//   box-shadow: 0px 8px 15px -3px rgba(0, 0, 0, 0.15);
+//   border: 2px solid #00000000;
+//   color: #272727;
+//   font-weight: 500;
+// }
 /* Own button styles */
-.button--link:focus,
-.button--link:hover,
-.button--link:active {
-  color: #222222;
-  font-weight: 600;
-  border-width: 2px;
-  border-style: solid;
-}
-.button--rounded {
-  border-radius: 20px;
-}
+@import "components/buttons";
+// .button--link:focus,
+// .button--link:hover,
+// .button--link:active {
+//   color: #222222;
+//   font-weight: 600;
+//   border-width: 2px;
+//   border-style: solid;
+// }
+// .button--rounded {
+//   border-radius: 20px;
+// }
