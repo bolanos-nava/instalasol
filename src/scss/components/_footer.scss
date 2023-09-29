@@ -1,14 +1,15 @@
 @import "../mixins";
 
 .footer {
-  // footer can't stretch nor shrink
+  // footer can't stretch nor shrink in the block axis
   @include flex(row, center, center, $flex: 0);
+
   background-color: map-get($colors, asparagus);
   padding: 10px; // its size will be determined automatically by the size of the content and this padding
 
   &__link {
     &s {
-      @include flex(row, center, $gap: 20px);
+      @include flex(row wrap, center, $gap: 20px);
     }
 
     & {
@@ -19,7 +20,7 @@
       }
     }
   }
-  display: none;
+  // display: none;
 }
 
 footer.footer {

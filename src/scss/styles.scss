@@ -18,99 +18,15 @@
 @import "pages/gallery";
 @import "components/photocard";
 @import "components/carousel";
-/* END STYLES FOR GALLERY */
 
-/* STYLING CONTACT SECTION */
 @import "pages/contact";
-// .main--contact {
-//   flex: 0 1 800px;
-//   margin: 0 auto;
-// }
-// .main-title--contact {
-//   margin-bottom: 15px;
-// }
-// .contact-form {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 5px;
-//   align-items: center;
-// }
-// @media (min-width: 576px) {
-//   .contact-form {
-//     gap: 10px;
-//   }
-// }
-// .contact-form__submit-button {
-//   align-self: flex-end;
-//   background-color: map-get($colors, green);
-//   padding-left: 30px;
-//   padding-right: 30px;
-// }
-// .contact-form__submit-button:hover,
-// .contact-form__submit-button:active.btn:active,
-// .contact-form__submit-button:focus {
-//   background-color: rgba(191, 216, 189, 0.578);
-//   border-color: map-get($colors, green);
-// }
-/* END STYLES OF CONTACT SECTION */
 
-/* STYLES OF ABOUT SECTION */
-@import "pages/contact";
-// .main--about__section {
-//   margin-bottom: 10px;
-//   display: flex;
-//   flex-direction: column;
-// }
-// .main--about__section-title {
-//   margin-bottom: 5px;
-// }
-// .main--about__photo-section {
-//   align-self: center;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   padding-bottom: 5px;
-//   max-width: 400px;
-// }
-// .main--about__photo-section-title {
-//   font-size: 20px;
-//   font-weight: 600;
-// }
-// .main--about__photo {
-//   max-height: 100%;
-//   max-width: 100%;
-//   object-fit: cover;
-// }
-// .main--about__photo-caption {
-//   font-size: 13px;
-// }
-/* END STYLES OF ABOUT SECTION */
+@import "pages/about";
 
-/* GLOBAL UTILITY STYLES AND SOME BOOTSTRAP OVERRIDES */
 .centers-children {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/* Bootstrap btn overrides */
 @import "overrides/bootstrap-overrides";
-// .btn {
-//   box-shadow: 0px 8px 15px -3px rgba(0, 0, 0, 0.15);
-//   border: 2px solid #00000000;
-//   color: #272727;
-//   font-weight: 500;
-// }
-/* Own button styles */
 @import "components/buttons";
-// .button--link:focus,
-// .button--link:hover,
-// .button--link:active {
-//   color: #222222;
-//   font-weight: 600;
-//   border-width: 2px;
-//   border-style: solid;
-// }
-// .button--rounded {
-//   border-radius: 20px;
-// }

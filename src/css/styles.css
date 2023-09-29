@@ -124,7 +124,7 @@ img {
 .header__buttons {
   flex: 1 0 20%;
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
@@ -281,11 +281,10 @@ img {
   align-items: center;
   background-color: #68a357;
   padding: 10px;
-  display: none;
 }
 .footer__links {
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: center;
   gap: 20px;
 }
@@ -360,13 +359,14 @@ footer.footer .footer__link:focus, footer.footer .footer__link:hover, footer.foo
 @media (min-width: 576px) {
   ._input-group__label {
     font-size: initial;
-    font-weight: 500;
     text-transform: initial;
     letter-spacing: initial;
-    white-space: nowrap;
+    white-space: pre-wrap;
+    text-align: center;
     background-color: #ada5a5;
     border-right: 1px solid #c5c0c0;
     border-radius: 7px 0 0 7px;
+    flex: 0 0 30%;
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -541,7 +541,6 @@ textarea.form-control {
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  gap: 20px;
   padding: 20px;
   border-radius: 10px;
   background-color: #edb458;
@@ -632,8 +631,6 @@ textarea.form-control {
   aspect-ratio: 4/3;
 }
 
-/* END STYLES FOR GALLERY */
-/* STYLING CONTACT SECTION */
 .main--contact {
   flex: 0 1 800px;
   margin: 0 auto;
@@ -660,43 +657,41 @@ textarea.form-control {
   border-color: #bfd8bd;
 }
 
-/* END STYLES OF CONTACT SECTION */
-/* STYLES OF ABOUT SECTION */
-.main--contact {
-  flex: 0 1 800px;
-  margin: 0 auto;
-}
-.main--contact-form {
+.main--about__section {
+  margin-bottom: 10px;
   display: flex;
   flex-flow: column;
+}
+.main--about__section-title {
+  margin-bottom: 5px;
+}
+.main--about__photo-section {
+  align-self: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
+  padding-bottom: 5px;
+  max-width: 400px;
 }
-@media (min-width: 576px) {
-  .main--contact-form {
-    gap: 10px;
-  }
+.main--about__photo-section-title {
+  font-size: 20px;
+  font-weight: 600;
 }
-.main--contact-form__submit-button {
-  align-self: flex-end;
-  background-color: #bfd8bd;
-  padding-left: 30px;
-  padding-right: 30px;
+.main--about__photo {
+  max-height: 100%;
+  max-width: 100%;
 }
-.main--contact-form__submit-button:hover, .main--contact-form__submit-button:focus, .main--contact-form__submit-button:active.btn:active {
-  background-color: #a0c59d;
-  border-color: #bfd8bd;
+.main--about__photo-caption {
+  font-size: 13px;
 }
 
-/* END STYLES OF ABOUT SECTION */
-/* GLOBAL UTILITY STYLES AND SOME BOOTSTRAP OVERRIDES */
 .centers-children {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Bootstrap btn overrides */
 .btn {
   box-shadow: 0 8 15px -3px rgba(0, 0, 0, 0.15);
   border: 2px solid rgba(0, 0, 0, 0);
@@ -704,7 +699,6 @@ textarea.form-control {
   font-weight: 500;
 }
 
-/* Own button styles */
 .button--link:focus, .button--link:hover, .button--link:active {
   color: #222222;
   font-weight: 600;

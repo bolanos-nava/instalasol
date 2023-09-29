@@ -9,7 +9,7 @@
   &__button {
     &s {
       flex: 1 0 20%;
-      @include flex(row, center, center);
+      @include flex(row wrap, center, center);
       &--social {
         gap: 10px;
       }

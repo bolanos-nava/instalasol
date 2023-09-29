@@ -4,27 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- FontAwesome icons -->
-    <script
-      defer
-      src="../src/assets/fontawesome/js/brands.js"
-    ></script>
-    <script
-      defer
-      src="../src/assets/fontawesome/js/regular.js"
-    ></script>
-    <script
-      defer
-      src="../src/assets/fontawesome/js/solid.js"
-    ></script>
-    <script
-      defer
-      src="../src/assets/fontawesome/js/fontawesome.js"
-    ></script>
-
-    <!-- Google Fonts import -->
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@400;500;600;700;800&display=swap");
-    </style>
+    <script defer src="../src/assets/fontawesome/js/brands.js"></script>
+    <script defer src="../src/assets/fontawesome/js/regular.js"></script>
+    <script defer src="../src/assets/fontawesome/js/solid.js"></script>
+    <script defer src="../src/assets/fontawesome/js/fontawesome.js"></script>
 
     <!-- Bootstrap -->
     <link
@@ -34,20 +17,22 @@
       crossorigin="anonymous"
     />
     <script
+      defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <!-- <link rel="stylesheet" href="src/assets/bootstrap-5.3.2/css/bootstrap.min.css">
-   <script defer src="src/assets/bootstrap-5.3.2/js/bootstrap.min.js"></script> -->
 
+    <!-- Own links -->
     <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="../src/css/styles.css" />
+
+    <!-- Page title -->
     <title>InstalaSol | Contacto</title>
   </head>
   <body>
     <header class="header" id="header">
-      <div class="header__buttons-container navbar" id="navbarTogglerContainer">
+      <div class="header__buttons navbar" id="navbarTogglerContainer">
         <button
           class="navibar__toggler navbar-toggler"
           type="button"
@@ -64,7 +49,7 @@
       <div class="header__logo-container tablet-hidden">
         <img
           class="header__logo"
-          src="../src/assets/images/dummy_600x400.png"
+          src="src/assets/images/dummy_600x400.png"
           alt="InstalaSol logo"
         />
       </div>
@@ -77,35 +62,35 @@
       </div>
 
       <!-- facebook, whatsapp and email icons -->
-      <ul class="header__buttons-container header__buttons-container--social">
+      <ul class="header__buttons header__buttons--social">
         <li>
           <a
-            class="header__social-button"
+            class="header__button-social"
             href="https://www.facebook.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="header__social-icon fa-brands fa-facebook"></i>
+            <i class="header__icon-social fa-brands fa-facebook"></i>
           </a>
         </li>
         <li>
           <a
-            class="social-buttons__button"
+            class="header__button-social"
             href="https://wa.me/+528333016249"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="header__social-icon fa-brands fa-whatsapp"></i>
+            <i class="header__icon-social fa-brands fa-whatsapp"></i>
           </a>
         </li>
         <li>
           <a
-            class="social-buttons__button"
+            class="header__button-social"
             href="mailto:parito.2000@hotmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="header__social-icon fa-solid fa-envelope"></i>
+            <i class="header__icon-social fa-solid fa-envelope"></i>
           </a>
         </li>
       </ul>
@@ -114,40 +99,41 @@
         class="navibar navibar--header navibar--header--absolute collapse"
         id="headerNav"
       >
-        <ul class="navibar__list--header">
-          <li class="navibar__list-element--header nav-item">
+        <ul class="navibar--header__list">
+          <li class="navibar--header__list-element nav-item">
             <a
-              class="navibar__link navibar__link--header button--rounded"
+              class="navibar__link navibar--header__link button--rounded"
               href="../index.html"
-              ><span class="navibar__link-text--header">Inicio</span></a
-            >
+              ><span class="navibar--header__link-text">Inicio</span>
+            </a>
           </li>
-          <li class="navibar__list-element--header nav-item">
+          <li class="navibar--header__list-element nav-item">
             <a
-              class="navibar__link navibar__link--header button--rounded"
-              href="project-gallery.html"
-              ><span class="navibar__link-text--header">Galería de proyectos</span></a
-            >
+              class="navibar__link navibar--header__link button--rounded"
+              href="gallery.html"
+              ><span class="navibar--header__link-text">Galería</span>
+            </a>
           </li>
-          <li class="navibar__list-element--header nav-item">
+          <li class="navibar--header__list-element nav-item">
             <a
-              class="navibar__link navibar__link--header button--rounded"
+              class="navibar__link navibar--header__link button--rounded"
               href="about.html"
-              ><span class="navibar__link-text--header">Sobre nosotros</span></a
+              ><span class="navibar--header__link-text">Sobre nosotros</span></a
             >
           </li>
-          <li class="navibar__list-element--header nav-item">
+          <li class="navibar--header__list-element nav-item">
             <a
-            class="navibar__link navibar__link--header button--rounded"
-            href="payment.html"
-            ><span class="navibar__link-text--header"
-            >Formas de pago</span
-            ></a
+              class="navibar__link navibar--header__link button--rounded"
+              href="products-services.html"
+              ><span class="navibar--header__link-text"
+                >Catálogo de productos y servicios</span
+              ></a
             >
           </li>
-          <li class="navibar__list-element--header nav-item">
+          <li class="navibar--header__list-element nav-item">
             <span
-              class="navibar__link navibar__link--header button--rounded active-link"
+              class="navibar__link navibar--header__link active-link button--rounded"
+              aria-current="page"
             >
               Contacto
             </span>
@@ -165,18 +151,20 @@
             >
           </li>
           <li class="navibar__list-element">
-            <a class="navibar__link" href="project-gallery.html"
+            <a class="navibar__link" href="gallery.html"
               ><span class="navibar__link-text">Galería de proyectos</span></a
             >
           </li>
           <li class="navibar__list-element">
             <a class="navibar__link" href="about.html"
-            ><span class="navibar__link-text">Sobre nosostros</span></a
-          >
+              ><span class="navibar__link-text">Sobre nosotros</span></a
+            >
           </li>
           <li class="navibar__list-element">
-            <a class="navibar__link" href="payment.html"
-            ><span class="navibar__link-text">Formas de pago</span></a
+            <a class="navibar__link" href="products-services.html"
+              ><span class="navibar__link-text"
+                >Catálogo de productos y servicios</span
+              ></a
             >
           </li>
           <li class="navibar__list-element">
@@ -186,8 +174,12 @@
       </nav>
 
       <main class="main main--contact container">
-        <h2 class="main-title main-title--contact">Contáctanos</h2>
-        <form class="contact-form" enctype="application/json" method="post">
+        <h2 class="main__title main--contact__title">Contáctanos</h2>
+        <form
+          class="main--contact-form"
+          enctype="application/json"
+          method="post"
+        >
           <div class="_input-group">
             <label class="_input-group__label" for="nameInput">Nombre</label>
             <input type="text" class="form-control" id="nameInput" />
@@ -223,11 +215,11 @@
           </div>
 
           <input
+            class="main--contact-form__submit-button btn button--link button--rounded"
             type="submit"
             value="Enviar"
             role="button"
-            class="btn button--link button--rounded contact-form__submit-button"
-            id="submit-button"
+            id="submitButton"
           />
         </form>
       </main>

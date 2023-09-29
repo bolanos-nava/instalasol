@@ -14,14 +14,14 @@
     &__photo {
       &-section {
         align-self: center;
-        @include flex(column, center, center, 5px);
+        @include flex(column, center, center);
         padding-bottom: 5px;
         max-width: 400px;
-      }
 
-      &-title {
-        font-size: 20px;
-        font-weight: 600;
+        &-title {
+          font-size: 20px;
+          font-weight: 600;
+        }
       }
 
       & {
