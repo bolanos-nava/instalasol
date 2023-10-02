@@ -1,5 +1,5 @@
 .photocard {
-  &s {
+  &s { // photocards
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -13,15 +13,17 @@
     @media (min-width: map-get($breakpoints, tablet-min)) {
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
+
+    // putting this at the end of the cascade so it overrides every style when on landscape and height is <= mobile-max
     @media (orientation: landscape) and (max-height: map-get($breakpoints, mobile-max)) {
       grid-template-columns: minmax(0, 1fr);
     }
   }
 
-  & {
+  & { // photocard
     height: 80vh; // on mobile the height will be fixed to 80vh;
     @include flex(column, flex-start, center, 20px);
-    padding: 20px;
+    padding: 15px; // on mobile, low padding so the content of the cards takes more area inside of the photocard
     border-radius: 10px;
     background-color: map-get($colors, yellow);
     @include box-shadow(
@@ -38,6 +40,7 @@
     }
     @media (orientation: landscape) and (max-height: map-get($breakpoints, mobile-max)) {
       height: 20rem; // when we are on landscape and when the height is less than mobile-max, then set height to 20rem
+      padding: 15px;
       @include flex(row, center, $gap: 10px);
     }
   }

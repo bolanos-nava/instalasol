@@ -1,38 +1,49 @@
-@import "../mixins";
-
 .footer {
   // footer can't stretch nor shrink in the block axis
   @include flex(row, center, center, $flex: 0);
 
-  background-color: map-get($colors, asparagus);
-  padding: 10px; // its size will be determined automatically by the size of the content and this padding
+  background-color: map-get($colors, primary);
+  padding: 10px; // the size of the footer will be determined automatically by the size of the content and this padding
 
   &__link {
     &s {
       @include flex(row wrap, center, $gap: 20px);
     }
 
+    &,
+    &:focus,
+    &:hover,
+    &:active.btn:active {
+      color: map-get($colors, primary-text);
+    }
+    &:focus,
+    &:hover,
+    &:active.btn:active {
+      border-color: map-get($colors, secondary-emphasis);
+      background-color: map-get($colors-variations, secondary-dark-2);
+    }
+
     & {
       min-width: 200px;
+      background-color: map-get($colors, secondary);
 
       &:link:not(:hover):not(:active) {
         box-shadow: none;
       }
     }
   }
-  // display: none;
 }
 
-footer.footer {
-  & .footer__link {
-    &:focus,
-    &:hover,
-    &:active.btn:active {
-      border-color: #00000000;
-      background-color: map-get($colors, blue-dark);
-    }
-  }
-}
+// footer.footer {
+//   & .footer__link {
+//     &:focus,
+//     &:hover,
+//     &:active.btn:active {
+//       border-color: map-get($colors, secondary-emphasis);
+//       background-color: map-get($colors-variations, secondary-dark-2);
+//     }
+//   }
+// }
 
 .go-to-top-button {
   &,
@@ -44,8 +55,8 @@ footer.footer {
     transform: translateX(-100%);
     border-radius: 50%;
     font-size: 30px;
-    color: #000;
-    background-color: map-get($colors, blue);
+    color: map-get($colors, primary-contrast);
+    background-color: map-get($colors-variations, secondary-light-4);
     @include box-shadow(
       true,
       $offsets: (x: 0, y: -1px),

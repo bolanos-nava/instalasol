@@ -1,26 +1,23 @@
+@import "functions";
+@import "mixins";
 @import "variables";
 @import "resets";
 @import "globals";
-@import "mixins";
 
+@import "overrides/bootstrap-overrides";
 @import "components/shared-styles";
-@import "components/header";
-
-@import "components/navbars";
-
-@import "components/footer";
-
-@import "components/mains";
+@import "components/buttons";
 @import "components/inputs";
-
-@import "pages/index";
-
-@import "pages/gallery";
+@import "components/mains";
+@import "components/navbars";
+@import "components/header";
+@import "components/footer";
 @import "components/photocard";
 @import "components/carousel";
 
+@import "pages/index";
+@import "pages/gallery";
 @import "pages/contact";
-
 @import "pages/about";
 
 .centers-children {
@@ -28,5 +25,3 @@
   justify-content: center;
   align-items: center;
 }
-@import "overrides/bootstrap-overrides";
-@import "components/buttons";

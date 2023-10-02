@@ -1,5 +1,3 @@
-@import "mixins";
-
 /* Putting height: 100% in the body and min-height: 100% is a combination that makes your page have a height that covers all the available height of the device, without leaving empty space at the end of the page, and even if you don't have content in the page. Additionally, by making body a flex container we can tell the inner containers to take all available space with the use of flex: 1  */
 html {
   height: 100%;

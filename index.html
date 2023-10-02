@@ -34,24 +34,10 @@
 
   <body>
     <header class="header" id="header">
-      <div class="header__buttons navbar" id="navbarTogglerContainer">
-        <button
-          class="navibar__toggler navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#headerNav"
-          aria-controls="headerNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-
-      <div class="header__logo-container tablet-hidden">
+      <div class="header__logo-container">
         <img
           class="header__logo"
-          src="src/assets/images/dummy_600x400.png"
+          src="src/assets/images/instalasol-logo.png"
           alt="InstalaSol logo"
         />
       </div>
@@ -64,9 +50,16 @@
       </div>
 
       <!-- facebook, whatsapp and email icons -->
-      <ul class="header__buttons header__buttons--social">
+      <ul
+        class="header__buttons header__buttons--social header__buttons--social--header"
+      >
         <li>
+          <span id="headerButtonsFacebookLink" class="visually-hidden"
+            >Visitar página de Facebook</span
+          >
           <a
+            aria-labelledby="headerButtonsFacebookLink"
+            title="Visitar página de Facebook"
             class="header__button-social"
             href="https://www.facebook.com"
             target="_blank"
@@ -76,7 +69,12 @@
           </a>
         </li>
         <li>
+          <span id="headerButtonsWhatsAppLink" class="visually-hidden"
+            >Contactarte por WhatsApp</span
+          >
           <a
+            aria-labelledby="headerButtonsWhatsAppLink"
+            title="Contactarte por WhatsApp"
             class="header__button-social"
             href="https://wa.me/+528333016249"
             target="_blank"
@@ -86,7 +84,12 @@
           </a>
         </li>
         <li>
+          <span id="headerButtonsEmailLink" class="visually-hidden"
+            >Contactarte por correo</span
+          >
           <a
+            aria-labelledby="headerButtonsEmailLink"
+            title="Contactarte por correo"
             class="header__button-social"
             href="mailto:parito.2000@hotmail.com"
             target="_blank"
@@ -96,6 +99,20 @@
           </a>
         </li>
       </ul>
+
+      <div class="header__buttons navbar" id="navbarTogglerContainer">
+        <button
+          class="navibar__toggler navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#headerNav"
+          aria-controls="headerNav"
+          aria-expanded="false"
+          aria-label="Conmutar navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
       <nav
         class="navibar navibar--header navibar--header--absolute collapse"
@@ -129,7 +146,9 @@
             <a
               class="navibar__link navibar--header__link button--rounded"
               href="pages/products-services.html"
-              ><span class="navibar--header__link-text">Catálogo de productos y servicios</span></a
+              ><span class="navibar--header__link-text"
+                >Catálogo de productos y servicios</span
+              ></a
             >
           </li>
           <li class="navibar--header__list-element nav-item">
@@ -139,11 +158,63 @@
               ><span class="navibar--header__link-text">Contacto</span></a
             >
           </li>
+          <li>
+            <!-- facebook, whatsapp and email icons -->
+            <ul
+              class="header__buttons header__buttons--social header__buttons--social--navbar"
+            >
+              <li>
+                <span id="headerButtonsFacebookLink" class="visually-hidden"
+                  >Visitar página de Facebook</span
+                >
+                <a
+                  aria-labelledby="headerButtonsFacebookLink"
+                  title="Visitar página de Facebook"
+                  class="header__button-social"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="header__icon-social fa-brands fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <span id="headerButtonsWhatsAppLink" class="visually-hidden"
+                  >Contactarte por WhatsApp</span
+                >
+                <a
+                  aria-labelledby="headerButtonsWhatsAppLink"
+                  title="Contactarte por WhatsApp"
+                  class="header__button-social"
+                  href="https://wa.me/+528333016249"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="header__icon-social fa-brands fa-whatsapp"></i>
+                </a>
+              </li>
+              <li>
+                <span id="headerButtonsEmailLink" class="visually-hidden"
+                  >Contactarte por correo</span
+                >
+                <a
+                  aria-labelledby="headerButtonsEmailLink"
+                  title="Contactarte por correo"
+                  class="header__button-social"
+                  href="mailto:parito.2000@hotmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="header__icon-social fa-solid fa-envelope"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <div class="body-container">
+    <div class="body-container body-container--homepage">
       <nav class="navibar">
         <ul class="navibar__list">
           <li class="navibar__list-element">
@@ -161,7 +232,9 @@
           </li>
           <li class="navibar__list-element">
             <a class="navibar__link" href="pages/products-services.html"
-              ><span class="navibar__link-text">Catálogo de productos y servicios</span></a
+              ><span class="navibar__link-text"
+                >Catálogo de productos y servicios</span
+              ></a
             >
           </li>
           <li class="navibar__list-element">
@@ -171,7 +244,7 @@
           </li>
         </ul>
       </nav>
-      <div class="centers-children">
+      <div class="flex-fill">
         <main class="main main--homepage">
           <h2 class="main__title main--homepage__title">
             Soluciones a tu medida para ahorrar en tu consumo de electricidad
@@ -188,10 +261,10 @@
                 cotización de acuerdo con tu consumo.
               </p>
               <a
-                class="main--homepage__link btn button--link button--rounded"
+                aria-label="Visitar página de contacto"
+                class="main--homepage__link btn button button--link button--rounded"
                 id="contactButton"
-                role="button"
-                href="/pages/contact.html"
+                href="pages/contact.html"
                 >Contáctanos</a
               >
             </div>
@@ -199,29 +272,29 @@
               <div class="main--homepage__link-container">
                 <p class="main--homepage__link-label">Conoce nuestro trabajo</p>
                 <a
-                  class="main--homepage__link btn button--link button--rounded"
-                  role="button"
-                  href="/pages/gallery.html"
+                  aria-label="Visitar galería de proyectos"
+                  class="main--homepage__link btn button button--link button--rounded"
+                  href="pages/gallery.html"
                   >Proyectos</a
                 >
               </div>
               <div class="main--homepage__link-container">
                 <p class="main--homepage__link-label">Conoce a la empresa</p>
                 <a
-                  class="main--homepage__link btn button--link button--rounded"
-                  role="button"
-                  href="/pages/about.html"
+                  aria-label="Visitar página de historia de la compañía"
+                  class="main--homepage__link btn button button--link button--rounded"
+                  href="pages/about.html"
                   >Conócenos</a
                 >
               </div>
             </div>
           </div>
           <aside class="main--homepage__aside centers-children">
-            <img
+            <!-- <img
               class="main--homepage__aside-img"
-              src="src/assets/images/dummy_400x1000.png"
+              src="src/assets/images/solar-panel-4.jpg"
               alt="Imagen decorativa que se funde con el fondo"
-            />
+            /> -->
           </aside>
         </main>
       </div>
@@ -234,16 +307,15 @@
       <ul class="footer__links">
         <li class="footer__link-container">
           <a
-            role="button"
-            class="footer__link btn button--link button--rounded"
-            href="pages/copyright.html"
+            class="footer__link btn button button--link button--rounded"
+            href="copyright.html"
             >Copyright</a
           >
         </li>
         <li class="footer__link-container">
           <a
-            class="footer__link btn button--link button--rounded"
-            href="pages/privacy-notice.html"
+            class="footer__link btn button button--link button--rounded"
+            href="privacy-notice.html"
             >Aviso de privacidad</a
           >
         </li>

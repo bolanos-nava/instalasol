@@ -1,13 +1,18 @@
 .button {
-    &--link {
-        &:focus, &:hover, &:active {
-            color: #222222;
-            font-weight: 600;
-            border-width: 2px;
-            border-style: solid;
-        }
-    }
-    &--rounded {
-        border-radius: 20px;
-    }
+  background-color: map-get($colors, buttons, primary);
+  &,
+  &:focus,
+  &:hover,
+  &:active.btn:active {
+    color: map-get($colors, buttons, primary-text);
+  }
+  &:focus,
+  &:hover,
+  &:active.btn:active {
+    border-color: map-get($colors, secondary);
+    background-color: map-get($colors, buttons, primary-hover);
+  }
+  &--rounded {
+    border-radius: 20px;
+  }
 }

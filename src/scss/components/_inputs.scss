@@ -1,5 +1,3 @@
-@import "../mixins";
-
 ._input-group {
   @include flex(column, $align-i: stretch, $gap: 2px);
   width: 100%;
@@ -25,7 +23,7 @@
       background-color: map-get($colors, coco-gray-dark);
       border-right: 1px solid map-get($colors, coco-gray);
       border-radius: $border-radius 0 0 $border-radius;
-      @include flex(row, center, center ,$flex: 0 0 30%);
+      @include flex(row, center, center, $flex: 0 0 30%);
 
       @at-root {
         &,

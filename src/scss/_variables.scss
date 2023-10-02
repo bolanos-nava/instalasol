@@ -13,11 +13,55 @@ $colors: (
   asparagus-dark: darken(#68a357ff, 10%),
   coco-gray: #c5c0c0,
   coco-gray-dark: darken(#c5c0c0, 10%),
+  // COLOR PALETTE
+  // for header, footer, etc. (brand color)
+  primary: #091c3c,
+  // color with good contrast to the primary
+  primary-contrast: #064061,
+  // contrasting color for use in texts over primary
+  primary-text: #e3e3e3,
+
+  // secondary color: emphasis in sidebar, etc.
+  secondary: #a24614,
+  // emphasis for secondary color
+  secondary-emphasis: #ef7c14,
+  emphasis: #e7efc5,
+
+  // Backgrounds
+  bg-primary: #e4effb,
+
+  // Buttons
+  buttons:
+    (
+      primary: #e08b41,
+      primary-text: #2b2b2b,
+      primary-hover: #f88622,
+    ),
 );
+
+$colors-variations: (
+  primary-light: lighten(map-get($colors, primary), 15%),
+  primary-dark: darken(map-get($colors, primary), 10%),
+  secondary-light: lighten(map-get($colors, secondary), 10%),
+  secondary-dark: darken(map-get($colors, secondary), 5%),
+  emphasis-light: lighten(map-get($colors, emphasis), 15%),
+  emphasis-dark: darken(map-get($colors, emphasis), 10%),
+);
+
+@each $color in "primary", "secondary" {
+  $colors-variations: map-merge(
+    generate-color-brightness-variations(map-get($colors, $color), $color),
+    $colors-variations
+  );
+}
 
 $fonts: (
   titles: "Asap",
   body: "Open Sans",
+);
+
+$sizes: (
+  sidebar: 200px,
 );
 
 $breakpoints: (

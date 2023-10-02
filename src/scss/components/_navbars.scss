@@ -1,18 +1,15 @@
-@use "sass:selector";
-@import "../mixins";
-
 .navibar {
   display: none;
-  background-color: map-get($colors, cream);
+  background-color: map-get($colors, primary-contrast);
   @media (min-width: map-get($breakpoints, tablet-min)) {
-    flex: 0 0 200px;
+    flex: 0 0 map-get($sizes, sidebar);
     display: block;
     padding-top: 100px;
     width: 200px;
   }
 
   & * {
-    color: #4c4c4c;
+    color: map-get($colors, primary-text);
     font-weight: 600;
   }
 
@@ -45,7 +42,12 @@
     width: 95%;
     padding: 12px;
     padding-left: 5px;
-    border-radius: 0 20px 20px 0;
+    border: 2px solid #0000;
+    border-left: none;
+
+    &:not(&.button--rounded) {
+      border-radius: 0 20px 20px 0;
+    }
 
     &:hover,
     &.active-link {
@@ -63,7 +65,8 @@
     }
 
     &:not(&.active-link):hover {
-      background-color: map-get($colors, blue-dark);
+      background-color: map-get($colors-variations, secondary-dark-2);
+      border-color: map-get($colors, secondary-emphasis);
     }
 
     &:hover > &-text {
@@ -73,13 +76,14 @@
     &.active-link {
       width: 100%;
       @include flex($justify-c: center);
-      background-color: map-get($colors, green);
+      background-color: map-get($colors, secondary);
+      border-color: map-get($colors, secondary);
       cursor: default;
     }
   }
 
   &--header {
-    @include flex();
+    @include flex;
     border-radius: 0 0 10px 10px;
     @include box-shadow(
       false,
@@ -87,6 +91,9 @@
       $radii: (blur: 15px, spread: -3px),
       $color: (color-channel: #000, alpha-channel: 0.15)
     );
+    @media (min-width: map-get($breakpoints, tablet-min)) {
+      display: none;
+    }
 
     &--absolute {
       position: absolute;

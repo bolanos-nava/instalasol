@@ -1,3 +1,6 @@
+/** 
+ * Mixin to apply display flex and establish flex properties
+ */
 @mixin flex(
   $flex-flow: unset,
   $justify-c: unset,
@@ -6,7 +9,7 @@
   $flex: unset
 ) {
   @include assign-properties-if-not-unset(
-    $properties: (
+    (
       flex: $flex,
       display: flex,
       flex-flow: $flex-flow,
@@ -17,6 +20,9 @@
   );
 }
 
+/**
+ * Mixin to generate box-shadow
+ */
 @mixin box-shadow(
   $inset: false,
   $offsets: (
@@ -55,9 +61,8 @@
   $bottom: unset,
   $left: unset
 ) {
-
   @include assign-properties-if-not-unset(
-    $properties: (
+    (
       position: $position,
       top: $top,
       right: $right,
@@ -76,7 +81,7 @@
   $max-width: unset
 ) {
   @include assign-properties-if-not-unset(
-    $properties: (
+    (
       height: $height,
       width: $width,
       min-height: $min-height,
@@ -87,6 +92,23 @@
   );
 }
 
+@mixin background-image(
+  $url,
+  $repeat: no-repeat,
+  $position: center,
+  $size: cover
+) {
+  background-image: url($url);
+  background-size: $repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+/**
+ * Auxiliary mixin to use in other mixins
+ * This mixin takes in a map of property names and their values and only assigns them as CSS properties if they are not unset
+ * {$properties} Map of property names and their values
+ */
 @mixin assign-properties-if-not-unset($properties: ()) {
   @each $property, $value in $properties {
     @if $value != unset {

@@ -1,38 +1,54 @@
-@import "../mixins";
-
 .header {
-  @include flex(row, space-around, center, 5%);
+  @include flex(row, space-between, center, 5%);
   width: 100%;
   padding: 5px 0;
   position: relative;
-  background-color: map-get($colors, asparagus);
+  background-color: map-get($colors, primary);
+  color: map-get($colors, primary-text);
   &__button {
     &s {
-      flex: 1 0 20%;
-      @include flex(row wrap, center, center);
+      @include flex(row wrap, center, center, $flex: 1 1 20%);
+      @media (min-width: map-get($breakpoints, tablet-min)) {
+        flex: 0 1 map-get($sizes, sidebar);
+      }
+
       &--social {
+        display: flex;
         gap: 10px;
+
+        &--header {
+          display: none;
+          @media (min-width: map-get($breakpoints, tablet-min)) {
+            display: flex;
+          }
+        }
+
+        &--navbar {
+          margin-top: 15px;
+        }
       }
     }
   }
 
   &__logo {
     &-container {
-      flex: 0 0 200px;
+      flex: 1 1 20%;
+      @media (min-width: map-get($breakpoints, tablet-min)) {
+        flex: 0 0 map-get($sizes, sidebar);
+      }
       height: 100%;
       padding: 5px 10px;
     }
 
     & {
       object-fit: contain;
-      max-height: 50px;
+      max-height: 80px;
     }
   }
 
   &__title {
     &s {
-      flex: 1 0 40%;
-      @include flex(column, center, center, 2px);
+      @include flex(column, center, center, 2px, 1 1 40%);
       @media (min-width: map-get($breakpoints, tablet-min)) {
         @include flex(row, $gap: 15px);
       }
@@ -48,12 +64,21 @@
     &--secondary {
       font-size: 0.9rem;
     }
+
+    @media (min-width: map-get($breakpoints, mobile-min)) {
+      &--main {
+        font-size: 1.7rem;
+      }
+      &--secondary {
+        font-size: 1.2rem;
+      }
+    }
   }
 
   &__icon {
     &-social {
-      font-size: 1.3rem;
-      color: #000000;
+      font-size: 1.7rem;
+      color: map-get($colors, primary-text);
     }
   }
 }
