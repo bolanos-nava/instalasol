@@ -4,7 +4,7 @@
   $border-radius: 7px;
   @media (min-width: map-get($breakpoints, mobile-min)) {
     @include flex(row, $gap: 0);
-    border: 1px solid map-get($colors, coco-gray);
+    border: 1px solid map-get($colors, inputs, emphasis);
     border-radius: $border-radius;
   }
 
@@ -20,8 +20,9 @@
       letter-spacing: initial;
       white-space: pre-wrap;
       text-align: center;
-      background-color: map-get($colors, coco-gray-dark);
-      border-right: 1px solid map-get($colors, coco-gray);
+      color: map-get($colors, buttons, primary-text);
+      background-color: map-get($colors, buttons, primary);
+      border-right: 1px solid map-get($colors, buttons, primary);
       border-radius: $border-radius 0 0 $border-radius;
       @include flex(row, center, center, $flex: 0 0 30%);
 
@@ -39,7 +40,7 @@ select.form-select,
 input.form-control,
 textarea.form-control {
   width: 100%;
-  border: 1px solid map-get($colors, coco-gray);
+  border: 1px solid map-get($colors, inputs, emphasis);
 
   @media (min-width: map-get($breakpoints, mobile-min)) {
     flex: 1;

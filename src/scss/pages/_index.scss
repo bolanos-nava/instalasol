@@ -1,59 +1,44 @@
 .body-container {
   &--homepage {
-    // background-color: map-get($colors, );
-    // background-image: url("../../../src/assets/images/solar-panel-2.jpg");
-    // background-repeat: no-repeat;
-    // background-position: right -200px bottom 0;
-    // background-size: cover;
-
     @include background-image("../../../src/assets/images/solar-panel-3.jpg");
-    @media (min-width: map-get($breakpoints, tablet-min)) {
-      background-size: contain;
-    }
   }
 }
 
 .main {
   &--homepage {
-    background-color: rgba(map-get($colors, bg-primary), 0.5);
+    background-color: rgba(map-get($colors, bg-primary), 0.3);
     height: 100%;
-    display: grid;
-    grid-template-areas:
-      "title    title"
-      "content  aside";
-    grid-template-rows: repeat(2, min-content);
-    grid-template-columns: 60fr 40fr;
-    align-content: center;
-    gap: 10px 15px;
-    align-items: start;
-    font-size: 18px;
-    padding: 20px;
+    padding: 10%;
+    font-size: map-get($font-size, homepage, base);
+
+    @include flex(column, center, center, 15px);
 
     @media (min-width: map-get($breakpoints, tablet-min)) {
-      grid-template-areas:
-        "title    aside"
-        "content  aside";
-      padding: 5% 10%;
+      padding: 5% 8%;
+    }
+
+    &__title,
+    &__content {
+      max-width: map-get($breakpoints, desktop-min);
+      width: 100%;
+      border-radius: 10px;
+      color: map-get($colors, primary-text);
+      background-color: map-get($colors, primary-contrast);
     }
 
     &__title {
-      grid-area: title;
-      font-size: 2rem;
-      width: 100%;
+      font-size: map-get($font-size, homepage, base) + 1rem;
+      padding: 5px;
       margin: 0; // overriding styles in .main__title
-
-      @media (min-width: map-get($breakpoints, tablet-min)) {
-        align-self: end;
-      }
+      text-align: center;
     }
 
     &__content {
-      grid-area: content;
       @include flex(column, $align-i: start, $gap: 20px);
+      padding: 15px;
 
       &-text {
         @include flex(column, $gap: 5px);
-        font-size: 1rem;
       }
     }
 
@@ -63,7 +48,7 @@
         align-self: center;
 
         @media (min-width: map-get($breakpoints, tablet-min)) {
-          width: 175px;
+          width: 250px;
           align-self: flex-end;
         }
       }
@@ -82,7 +67,7 @@
         @include flex(column, $align-i: center, $gap: 2px, $flex: 50%);
 
         @media (min-width: map-get($breakpoints, tablet-min)) {
-          flex: 0 1 300px;
+          flex: 0 1 250px;
         }
       }
 
@@ -92,20 +77,7 @@
 
       & {
         width: 100%;
-        @media (min-width: map-get($breakpoints, mobile-min)) and (max-width: map-get($breakpoints, tablet-max)) {
-          width: 300px;
-        }
-      }
-    }
-
-    &__aside {
-      grid-area: aside;
-      height: 100%;
-      overflow: hidden;
-      &-img {
-        max-height: 60vh;
-        height: 100%;
-        // width: unset;
+        max-width: 300px;
       }
     }
   }

@@ -33,24 +33,10 @@
 
   <body>
     <header class="header" id="header">
-      <div class="header__buttons navbar" id="navbarTogglerContainer">
-        <button
-          class="navibar__toggler navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#headerNav"
-          aria-controls="headerNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-
-      <div class="header__logo-container tablet-hidden">
+      <div class="header__logo-container">
         <img
           class="header__logo"
-          src="src/assets/images/dummy_600x400.png"
+          src="../src/assets/images/instalasol-logo.png"
           alt="InstalaSol logo"
         />
       </div>
@@ -63,7 +49,9 @@
       </div>
 
       <!-- facebook, whatsapp and email icons -->
-      <ul class="header__buttons header__buttons--social">
+      <ul
+        class="header__buttons header__buttons--social header__buttons--social--header"
+      >
         <li>
           <span id="headerButtonsFacebookLink" class="visually-hidden"
             >Visitar página de Facebook</span
@@ -111,6 +99,23 @@
         </li>
       </ul>
 
+      <div class="header__buttons navbar" id="navbarTogglerContainer">
+        <span class="visually-hidden" id="navbarTogglerLabel"
+          >Conmutar navegación</span
+        >
+        <button
+          class="navibar__toggler navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#headerNav"
+          aria-controls="headerNav"
+          aria-expanded="false"
+          aria-labelledby="navbarTogglerLabel"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
       <nav
         class="navibar navibar--header navibar--header--absolute collapse"
         id="headerNav"
@@ -120,16 +125,15 @@
             <a
               class="navibar__link navibar--header__link button--rounded"
               href="../index.html"
-              ><span class="navibar--header__link-text">Inicio</span>
-            </a>
+              ><span class="navibar--header__link-text">Inicio</span></a
+            >
           </li>
           <li class="navibar--header__list-element nav-item">
             <span
               class="navibar__link navibar--header__link active-link button--rounded"
               aria-current="page"
+              >Galería de proyectos</span
             >
-              Galería de proyectosw
-            </span>
           </li>
           <li class="navibar--header__list-element nav-item">
             <a
@@ -154,12 +158,64 @@
               ><span class="navibar--header__link-text">Contacto</span></a
             >
           </li>
+          <li>
+            <!-- facebook, whatsapp and email icons -->
+            <ul
+              class="header__buttons header__buttons--social header__buttons--social--navbar"
+            >
+              <li>
+                <span id="headerButtonsFacebookLink" class="visually-hidden"
+                  >Visitar página de Facebook</span
+                >
+                <a
+                  aria-labelledby="headerButtonsFacebookLink"
+                  title="Visitar página de Facebook"
+                  class="header__button-social"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="header__icon-social fa-brands fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <span id="headerButtonsWhatsAppLink" class="visually-hidden"
+                  >Contactarte por WhatsApp</span
+                >
+                <a
+                  aria-labelledby="headerButtonsWhatsAppLink"
+                  title="Contactarte por WhatsApp"
+                  class="header__button-social"
+                  href="https://wa.me/+528333016249"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="header__icon-social fa-brands fa-whatsapp"></i>
+                </a>
+              </li>
+              <li>
+                <span id="headerButtonsEmailLink" class="visually-hidden"
+                  >Contactarte por correo</span
+                >
+                <a
+                  aria-labelledby="headerButtonsEmailLink"
+                  title="Contactarte por correo"
+                  class="header__button-social"
+                  href="mailto:parito.2000@hotmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="header__icon-social fa-solid fa-envelope"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>
 
     <div class="body-container">
-      <nav class="navibar">
+      <nav class="navibar navibar--sidebar">
         <ul class="navibar__list">
           <li class="navibar__list-element">
             <a class="navibar__link" href="../index.html"
@@ -257,26 +313,39 @@
                     data-bs-slide-to="0"
                     class="active"
                     aria-current="true"
-                    aria-label="Foto 1"
+                    aria-label="Foto 0"
                   ></button>
                   <button
                     type="button"
                     data-bs-target="#carouselIndicators1"
                     data-bs-slide-to="1"
+                    aria-label="Foto 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselIndicators1"
+                    data-bs-slide-to="2"
                     aria-label="Foto 2"
                   ></button>
                 </div>
                 <div class="_carousel__photos carousel-inner">
                   <div class="_carousel__photo-container carousel-item active">
                     <img
-                      src="../src/assets/images/dummy_600x400.png"
+                      src="../src/assets/images/projects/transports/transports-00.jpg"
                       class="_carousel__photo"
                       alt="Foto de trabajo realizado"
                     />
                   </div>
                   <div class="_carousel__photo-container carousel-item">
                     <img
-                      src="../src/assets/images/dummy_400x1000.png"
+                      src="../src/assets/images/projects/transports/transports-01.jpg"
+                      class="_carousel__photo"
+                      alt="Foto de trabajo realizado"
+                    />
+                  </div>
+                  <div class="_carousel__photo-container carousel-item">
+                    <img
+                      src="../src/assets/images/projects/transports/transports-02.jpeg"
                       class="_carousel__photo"
                       alt="Foto de trabajo realizado"
                     />
@@ -309,29 +378,15 @@
               </div>
             </div>
             <div class="photocard__footer">
-              <p><strong>Fecha de instalación:</strong> 23/07/2023</p>
-              <p><strong>Tamaño de la instalación:</strong> 40 paneles</p>
-              <p><strong>Generación:</strong> 100 kWh</p>
-              <p><strong>Lugar:</strong> Ciudad Valles, S.L.P.</p>
+              <p><b>Fecha de instalación:</b> 25/02/2023</p>
+              <p><b>Tamaño de la instalación:</b> 23 paneles</p>
+              <p><b>Generación:</b> 100 kWh</p>
+              <p><b>Lugar:</b> Tampico, Tamps.</p>
               <p>
-                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque
-                dolore facilis rerum adipisci eveniet rem provident quos, magni
-                similique quae quia tempore voluptatum cum corporis ipsam! Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                dolores voluptate perspiciatis possimus dolore incidunt quas
-                mollitia aspernatur natus dicta placeat architecto facere
-                accusantium nam, porro sequi velit deleniti? Facere!
-              </p>
-              <p>
-                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque
-                dolore facilis rerum adipisci eveniet rem provident quos, magni
-                similique quae quia tempore voluptatum cum corporis ipsam! Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                dolores voluptate perspiciatis possimus dolore incidunt quas
-                mollitia aspernatur natus dicta placeat architecto facere
-                accusantium nam, porro sequi velit deleniti? Facere!
+                <b>Contexto del cliente:</b> Lorem ipsum, dolor sit amet
+                consectetur adipisicing elit. Voluptas itaque quis, nihil quas
+                quo culpa fugiat vero est tempore minus quisquam atque error
+                iste alias totam voluptate non ab laborum!
               </p>
             </div>
           </div>
@@ -346,26 +401,26 @@
                     data-bs-slide-to="0"
                     class="active"
                     aria-current="true"
-                    aria-label="Foto 1"
+                    aria-label="Foto 0"
                   ></button>
                   <button
                     type="button"
                     data-bs-target="#carouselIndicators2"
                     data-bs-slide-to="1"
-                    aria-label="Foto 2"
+                    aria-label="Foto 1"
                   ></button>
                 </div>
                 <div class="_carousel__photos carousel-inner">
                   <div class="_carousel__photo-container carousel-item active">
                     <img
-                      src="../src/assets/images/dummy_600x400.png"
+                      src="../src/assets/images/projects/tomasa/tomasa-00.jpg"
                       class="_carousel__photo"
                       alt="Foto de trabajo realizado"
                     />
                   </div>
                   <div class="_carousel__photo-container carousel-item">
                     <img
-                      src="../src/assets/images/dummy_400x1000.png"
+                      src="../src/assets/images/projects/tomasa/tomasa-01.jpg"
                       class="_carousel__photo"
                       alt="Foto de trabajo realizado"
                     />
@@ -398,23 +453,13 @@
               </div>
             </div>
             <div class="photocard__footer">
-              <p><strong>Fecha de instalación:</strong> 23/07/2023</p>
-              <p><strong>Tamaño de la instalación:</strong> 40 paneles</p>
-              <p><strong>Generación:</strong> 100 kWh</p>
-              <p><strong>Lugar:</strong> Ciudad Valles, S.L.P.</p>
+              <p><b>Fecha de instalación:</b> 23/07/2023</p>
+              <p><b>Tamaño de la instalación:</b> 40 paneles</p>
+              <p><b>Generación:</b> 100 kWh</p>
+              <p><b>Lugar:</b> Ciudad Valles, S.L.P.</p>
               <p>
-                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque
-                dolore facilis rerum adipisci eveniet rem provident quos, magni
-                similique quae quia tempore voluptatum cum corporis ipsam! Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                dolores voluptate perspiciatis possimus dolore incidunt quas
-                mollitia aspernatur natus dicta placeat architecto facere
-                accusantium nam, porro sequi velit deleniti? Facere!
-              </p>
-              <p>
-                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque
+                <b>Contexto del cliente:</b> Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Qui dicta fuga veniam itaque
                 dolore facilis rerum adipisci eveniet rem provident quos, magni
                 similique quae quia tempore voluptatum cum corporis ipsam! Lorem
                 ipsum dolor sit amet consectetur adipisicing elit. Quaerat
@@ -435,26 +480,39 @@
                     data-bs-slide-to="0"
                     class="active"
                     aria-current="true"
-                    aria-label="Foto 1"
+                    aria-label="Foto 0"
                   ></button>
                   <button
                     type="button"
                     data-bs-target="#carouselIndicators3"
                     data-bs-slide-to="1"
+                    aria-label="Foto 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselIndicators3"
+                    data-bs-slide-to="2"
                     aria-label="Foto 2"
                   ></button>
                 </div>
                 <div class="_carousel__photos carousel-inner">
                   <div class="_carousel__photo-container carousel-item active">
                     <img
-                      src="../src/assets/images/dummy_600x400.png"
+                      src="../src/assets/images/projects/transpais/transpais-00.jpg"
                       class="_carousel__photo"
                       alt="Foto de trabajo realizado"
                     />
                   </div>
                   <div class="_carousel__photo-container carousel-item">
                     <img
-                      src="../src/assets/images/dummy_400x1000.png"
+                      src="../src/assets/images/projects/transpais/transpais-01.jpg"
+                      class="_carousel__photo"
+                      alt="Foto de trabajo realizado"
+                    />
+                  </div>
+                  <div class="_carousel__photo-container carousel-item">
+                    <img
+                      src="../src/assets/images/projects/transpais/transpais-02.jpg"
                       class="_carousel__photo"
                       alt="Foto de trabajo realizado"
                     />
@@ -487,23 +545,13 @@
               </div>
             </div>
             <div class="photocard__footer">
-              <p><strong>Fecha de instalación:</strong> 23/07/2023</p>
-              <p><strong>Tamaño de la instalación:</strong> 40 paneles</p>
-              <p><strong>Generación:</strong> 100 kWh</p>
-              <p><strong>Lugar:</strong> Ciudad Valles, S.L.P.</p>
+              <p><b>Fecha de instalación:</b> 23/07/2023</p>
+              <p><b>Tamaño de la instalación:</b> 40 paneles</p>
+              <p><b>Generación:</b> 100 kWh</p>
+              <p><b>Lugar:</b> Ciudad Valles, S.L.P.</p>
               <p>
-                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque
-                dolore facilis rerum adipisci eveniet rem provident quos, magni
-                similique quae quia tempore voluptatum cum corporis ipsam! Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                dolores voluptate perspiciatis possimus dolore incidunt quas
-                mollitia aspernatur natus dicta placeat architecto facere
-                accusantium nam, porro sequi velit deleniti? Facere!
-              </p>
-              <p>
-                <strong>Contexto del cliente:</strong> Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Qui dicta fuga veniam itaque
+                <b>Contexto del cliente:</b> Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Qui dicta fuga veniam itaque
                 dolore facilis rerum adipisci eveniet rem provident quos, magni
                 similique quae quia tempore voluptatum cum corporis ipsam! Lorem
                 ipsum dolor sit amet consectetur adipisicing elit. Quaerat
@@ -524,15 +572,14 @@
       <ul class="footer__links">
         <li class="footer__link-container">
           <a
-            role="button"
-            class="footer__link btn button--link button--rounded"
+            class="footer__link btn button button--link button--rounded"
             href="copyright.html"
             >Copyright</a
           >
         </li>
         <li class="footer__link-container">
           <a
-            class="footer__link btn button--link button--rounded"
+            class="footer__link btn button button--link button--rounded"
             href="privacy-notice.html"
             >Aviso de privacidad</a
           >

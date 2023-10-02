@@ -99,7 +99,7 @@
   $size: cover
 ) {
   background-image: url($url);
-  background-size: $repeat;
+  background-repeat: $repeat;
   background-position: $position;
   background-size: $size;
 }

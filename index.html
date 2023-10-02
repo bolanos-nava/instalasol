@@ -101,6 +101,9 @@
       </ul>
 
       <div class="header__buttons navbar" id="navbarTogglerContainer">
+        <span class="visually-hidden" id="navbarTogglerLabel"
+          >Conmutar navegación</span
+        >
         <button
           class="navibar__toggler navbar-toggler"
           type="button"
@@ -108,7 +111,7 @@
           data-bs-target="#headerNav"
           aria-controls="headerNav"
           aria-expanded="false"
-          aria-label="Conmutar navegación"
+          aria-labelledby="navbarTogglerLabel"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -215,7 +218,7 @@
     </header>
 
     <div class="body-container body-container--homepage">
-      <nav class="navibar">
+      <nav class="navibar navibar--sidebar">
         <ul class="navibar__list">
           <li class="navibar__list-element">
             <span class="navibar__link active-link">Inicio</span>
@@ -289,13 +292,6 @@
               </div>
             </div>
           </div>
-          <aside class="main--homepage__aside centers-children">
-            <!-- <img
-              class="main--homepage__aside-img"
-              src="src/assets/images/solar-panel-4.jpg"
-              alt="Imagen decorativa que se funde con el fondo"
-            /> -->
-          </aside>
         </main>
       </div>
     </div>

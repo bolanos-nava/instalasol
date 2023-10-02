@@ -28,6 +28,7 @@ p {
 /* Putting height: 100% in the body and min-height: 100% is a combination that makes your page have a height that covers all the available height of the device, without leaving empty space at the end of the page, and even if you don't have content in the page. Additionally, by making body a flex container we can tell the inner containers to take all available space with the use of flex: 1  */
 html {
   height: 100%;
+  font-size: 16px;
 }
 
 body {
@@ -36,6 +37,7 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  background-color: rgba(228, 239, 251, 0.3);
 }
 
 h1,
@@ -156,7 +158,7 @@ img {
     display: flex;
     flex-flow: row;
     gap: 0;
-    border: 1px solid #c5c0c0;
+    border: 1px solid #ada5a5;
     border-radius: 7px;
   }
 }
@@ -173,8 +175,9 @@ img {
     letter-spacing: initial;
     white-space: pre-wrap;
     text-align: center;
-    background-color: #ada5a5;
-    border-right: 1px solid #c5c0c0;
+    color: #2b2b2b;
+    background-color: #e08b41;
+    border-right: 1px solid #e08b41;
     border-radius: 7px 0 0 7px;
     flex: 0 0 30%;
     display: flex;
@@ -192,7 +195,7 @@ select.form-select,
 input.form-control,
 textarea.form-control {
   width: 100%;
-  border: 1px solid #c5c0c0;
+  border: 1px solid #ada5a5;
 }
 @media (min-width: 576px) {
   select.form-select,
@@ -228,7 +231,6 @@ textarea.form-control {
     flex: 0 0 200px;
     display: block;
     padding-top: 100px;
-    width: 200px;
   }
 }
 .navibar * {
@@ -241,6 +243,9 @@ textarea.form-control {
   }
 }
 
+.navibar__toggler {
+  background-color: #e3e3e3;
+}
 .navibar__toggler, .navibar__toggler:focus {
   box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.184);
 }
@@ -258,9 +263,9 @@ textarea.form-control {
   padding: 12px;
   padding-left: 5px;
   border: 2px solid rgba(0, 0, 0, 0);
-  border-left: none;
 }
 .navibar__link:not(.navibar__link.button--rounded) {
+  border-left: none;
   border-radius: 0 20px 20px 0;
 }
 .navibar__link:hover, .navibar__link.active-link {
@@ -287,7 +292,7 @@ textarea.form-control {
 .navibar--header {
   display: flex;
   border-radius: 0 0 10px 10px;
-  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.2);
 }
 @media (min-width: 768px) {
   .navibar--header {
@@ -333,6 +338,10 @@ textarea.form-control {
 .navibar--header__link:hover > .navibar--header__link-text {
   transform: translateY(-1px);
 }
+.navibar--sidebar {
+  z-index: 1;
+  box-shadow: 5px 0 15px -3px rgba(0, 0, 0, 0.2);
+}
 
 .header {
   display: flex;
@@ -343,6 +352,8 @@ textarea.form-control {
   width: 100%;
   padding: 5px 0;
   position: relative;
+  z-index: 1;
+  box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.2);
   background-color: #091c3c;
   color: #e3e3e3;
 }
@@ -509,7 +520,7 @@ textarea.form-control {
   gap: 20px;
   padding: 15px;
   border-radius: 10px;
-  background-color: #edb458;
+  background-color: #e08b41;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.34);
 }
 @media (min-width: 576px) {
@@ -533,6 +544,7 @@ textarea.form-control {
   }
 }
 .photocard__footer {
+  align-self: stretch;
   flex: 1;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -600,65 +612,58 @@ textarea.form-control {
 
 .body-container--homepage {
   background-image: url("../../../src/assets/images/solar-panel-3.jpg");
-  background-size: no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-@media (min-width: 768px) {
-  .body-container--homepage {
-    background-size: contain;
-  }
-}
 
 .main--homepage {
-  background-color: rgba(228, 239, 251, 0.5);
+  background-color: rgba(228, 239, 251, 0.3);
   height: 100%;
-  display: grid;
-  grid-template-areas: "title    title" "content  aside";
-  grid-template-rows: repeat(2, min-content);
-  grid-template-columns: 60fr 40fr;
-  align-content: center;
-  gap: 10px 15px;
-  align-items: start;
-  font-size: 18px;
-  padding: 20px;
+  padding: 10%;
+  font-size: 1.1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 @media (min-width: 768px) {
   .main--homepage {
-    grid-template-areas: "title    aside" "content  aside";
-    padding: 5% 10%;
+    padding: 5% 8%;
   }
+}
+.main--homepage__title, .main--homepage__content {
+  max-width: 992px;
+  width: 100%;
+  border-radius: 10px;
+  color: #e3e3e3;
+  background-color: #064061;
 }
 .main--homepage__title {
-  grid-area: title;
-  font-size: 2rem;
-  width: 100%;
+  font-size: 2.1rem;
+  padding: 5px;
   margin: 0;
-}
-@media (min-width: 768px) {
-  .main--homepage__title {
-    align-self: end;
-  }
+  text-align: center;
 }
 .main--homepage__content {
-  grid-area: content;
   display: flex;
   flex-flow: column;
   align-items: start;
   gap: 20px;
+  padding: 15px;
 }
 .main--homepage__content-text {
   display: flex;
   flex-flow: column;
   gap: 5px;
-  font-size: 1rem;
 }
 .main--homepage__link#contactButton {
   align-self: center;
 }
 @media (min-width: 768px) {
   .main--homepage__link#contactButton {
-    width: 175px;
+    width: 250px;
     align-self: flex-end;
   }
 }
@@ -689,7 +694,7 @@ textarea.form-control {
 }
 @media (min-width: 768px) {
   .main--homepage__link-container {
-    flex: 0 1 300px;
+    flex: 0 1 250px;
   }
 }
 .main--homepage__link-label {
@@ -697,20 +702,7 @@ textarea.form-control {
 }
 .main--homepage__link {
   width: 100%;
-}
-@media (min-width: 576px) and (max-width: 767px) {
-  .main--homepage__link {
-    width: 300px;
-  }
-}
-.main--homepage__aside {
-  grid-area: aside;
-  height: 100%;
-  overflow: hidden;
-}
-.main--homepage__aside-img {
-  max-height: 60vh;
-  height: 100%;
+  max-width: 300px;
 }
 
 .main--gallery__selects {
@@ -738,13 +730,8 @@ textarea.form-control {
 }
 .main--contact-form__submit-button {
   align-self: flex-end;
-  background-color: #bfd8bd;
   padding-left: 30px;
   padding-right: 30px;
-}
-.main--contact-form__submit-button:hover, .main--contact-form__submit-button:focus, .main--contact-form__submit-button:active.btn:active {
-  background-color: #a0c59d;
-  border-color: #bfd8bd;
 }
 
 .main--about__section {

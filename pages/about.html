@@ -32,24 +32,10 @@
   </head>
   <body>
     <header class="header" id="header">
-      <div class="header__buttons navbar" id="navbarTogglerContainer">
-        <button
-          class="navibar__toggler navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#headerNav"
-          aria-controls="headerNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-
-      <div class="header__logo-container tablet-hidden">
+      <div class="header__logo-container">
         <img
           class="header__logo"
-          src="src/assets/images/dummy_600x400.png"
+          src="../src/assets/images/instalasol-logo.png"
           alt="InstalaSol logo"
         />
       </div>
@@ -62,9 +48,16 @@
       </div>
 
       <!-- facebook, whatsapp and email icons -->
-      <ul class="header__buttons header__buttons--social">
+      <ul
+        class="header__buttons header__buttons--social header__buttons--social--header"
+      >
         <li>
+          <span id="headerButtonsFacebookLink" class="visually-hidden"
+            >Visitar página de Facebook</span
+          >
           <a
+            aria-labelledby="headerButtonsFacebookLink"
+            title="Visitar página de Facebook"
             class="header__button-social"
             href="https://www.facebook.com"
             target="_blank"
@@ -74,7 +67,12 @@
           </a>
         </li>
         <li>
+          <span id="headerButtonsWhatsAppLink" class="visually-hidden"
+            >Contactarte por WhatsApp</span
+          >
           <a
+            aria-labelledby="headerButtonsWhatsAppLink"
+            title="Contactarte por WhatsApp"
             class="header__button-social"
             href="https://wa.me/+528333016249"
             target="_blank"
@@ -84,7 +82,12 @@
           </a>
         </li>
         <li>
+          <span id="headerButtonsEmailLink" class="visually-hidden"
+            >Contactarte por correo</span
+          >
           <a
+            aria-labelledby="headerButtonsEmailLink"
+            title="Contactarte por correo"
             class="header__button-social"
             href="mailto:parito.2000@hotmail.com"
             target="_blank"
@@ -95,6 +98,23 @@
         </li>
       </ul>
 
+      <div class="header__buttons navbar" id="navbarTogglerContainer">
+        <span class="visually-hidden" id="navbarTogglerLabel"
+          >Conmutar navegación</span
+        >
+        <button
+          class="navibar__toggler navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#headerNav"
+          aria-controls="headerNav"
+          aria-expanded="false"
+          aria-labelledby="navbarTogglerLabel"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
       <nav
         class="navibar navibar--header navibar--header--absolute collapse"
         id="headerNav"
@@ -104,8 +124,8 @@
             <a
               class="navibar__link navibar--header__link button--rounded"
               href="../index.html"
-              ><span class="navibar--header__link-text">Inicio</span>
-            </a>
+              ><span class="navibar--header__link-text">Inicio</span></a
+            >
           </li>
           <li class="navibar--header__list-element nav-item">
             <a
@@ -120,9 +140,8 @@
             <span
               class="navibar__link navibar--header__link active-link button--rounded"
               aria-current="page"
+              >Sobre nosotros</span
             >
-              Sobre nosotros
-            </span>
           </li>
           <li class="navibar--header__list-element nav-item">
             <a
@@ -139,6 +158,58 @@
               href="contact.html"
               ><span class="navibar--header__link-text">Contacto</span></a
             >
+          </li>
+          <li>
+            <!-- facebook, whatsapp and email icons -->
+            <ul
+              class="header__buttons header__buttons--social header__buttons--social--navbar"
+            >
+              <li>
+                <span id="headerButtonsFacebookLink" class="visually-hidden"
+                  >Visitar página de Facebook</span
+                >
+                <a
+                  aria-labelledby="headerButtonsFacebookLink"
+                  title="Visitar página de Facebook"
+                  class="header__button-social"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="header__icon-social fa-brands fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <span id="headerButtonsWhatsAppLink" class="visually-hidden"
+                  >Contactarte por WhatsApp</span
+                >
+                <a
+                  aria-labelledby="headerButtonsWhatsAppLink"
+                  title="Contactarte por WhatsApp"
+                  class="header__button-social"
+                  href="https://wa.me/+528333016249"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="header__icon-social fa-brands fa-whatsapp"></i>
+                </a>
+              </li>
+              <li>
+                <span id="headerButtonsEmailLink" class="visually-hidden"
+                  >Contactarte por correo</span
+                >
+                <a
+                  aria-labelledby="headerButtonsEmailLink"
+                  title="Contactarte por correo"
+                  class="header__button-social"
+                  href="mailto:parito.2000@hotmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="header__icon-social fa-solid fa-envelope"></i>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
@@ -219,15 +290,14 @@
       <ul class="footer__links">
         <li class="footer__link-container">
           <a
-            role="button"
-            class="footer__link btn button--link button--rounded"
+            class="footer__link btn button button--link button--rounded"
             href="copyright.html"
             >Copyright</a
           >
         </li>
         <li class="footer__link-container">
           <a
-            class="footer__link btn button--link button--rounded"
+            class="footer__link btn button button--link button--rounded"
             href="privacy-notice.html"
             >Aviso de privacidad</a
           >

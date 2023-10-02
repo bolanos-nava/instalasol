@@ -5,7 +5,6 @@
     flex: 0 0 map-get($sizes, sidebar);
     display: block;
     padding-top: 100px;
-    width: 200px;
   }
 
   & * {
@@ -23,6 +22,10 @@
   }
 
   &__toggler {
+    & {
+      background-color: map-get($colors, primary-text);
+    }
+
     &,
     &:focus {
       @include box-shadow(
@@ -43,9 +46,9 @@
     padding: 12px;
     padding-left: 5px;
     border: 2px solid #0000;
-    border-left: none;
-
+    
     &:not(&.button--rounded) {
+      border-left: none;
       border-radius: 0 20px 20px 0;
     }
 
@@ -87,9 +90,9 @@
     border-radius: 0 0 10px 10px;
     @include box-shadow(
       false,
-      $offsets: (x: 0, y: 8px),
-      $radii: (blur: 15px, spread: -3px),
-      $color: (color-channel: #000, alpha-channel: 0.15)
+      $offsets: (x: 0, y: map-get($box-shadows, offset)),
+      $radii: map-get($box-shadows, radii),
+      $color: map-get($box-shadows, colors)
     );
     @media (min-width: map-get($breakpoints, tablet-min)) {
       display: none;
@@ -134,5 +137,15 @@
         transform: translateY(-1px);
       }
     }
+  }
+
+  &--sidebar {
+    z-index: 1;
+    @include box-shadow(
+      false,
+      $offsets: (x: map-get($box-shadows, offset), y: 0),
+      $radii: map-get($box-shadows, radii),
+      $color: map-get($box-shadows, colors)
+    );
   }
 }

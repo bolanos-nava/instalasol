@@ -1,18 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@400;500;600;700;800&display=swap");
 
 $colors: (
-  cream: #edeec9ff,
-  cream-dark: darken(#edeec9ff, 10%),
-  green: #bfd8bdff,
-  green-dark: darken(#bfd8bdff, 10%),
-  blue: #0892a5ff,
-  blue-dark: darken(#0892a5ff, 10%),
-  yellow: #edb458ff,
-  yellow-dark: darken(#edb458ff, 10%),
-  asparagus: #68a357ff,
-  asparagus-dark: darken(#68a357ff, 10%),
-  coco-gray: #c5c0c0,
-  coco-gray-dark: darken(#c5c0c0, 10%),
   // COLOR PALETTE
   // for header, footer, etc. (brand color)
   primary: #091c3c,
@@ -25,7 +13,6 @@ $colors: (
   secondary: #a24614,
   // emphasis for secondary color
   secondary-emphasis: #ef7c14,
-  emphasis: #e7efc5,
 
   // Backgrounds
   bg-primary: #e4effb,
@@ -37,18 +24,18 @@ $colors: (
       primary-text: #2b2b2b,
       primary-hover: #f88622,
     ),
+
+  // Inputs
+  inputs:
+    (
+      emphasis: darken(#c5c0c0, 10%),
+    ),
 );
 
 $colors-variations: (
-  primary-light: lighten(map-get($colors, primary), 15%),
-  primary-dark: darken(map-get($colors, primary), 10%),
-  secondary-light: lighten(map-get($colors, secondary), 10%),
-  secondary-dark: darken(map-get($colors, secondary), 5%),
-  emphasis-light: lighten(map-get($colors, emphasis), 15%),
-  emphasis-dark: darken(map-get($colors, emphasis), 10%),
 );
 
-@each $color in "primary", "secondary" {
+@each $color in "primary", "secondary", "bg-primary" {
   $colors-variations: map-merge(
     generate-color-brightness-variations(map-get($colors, $color), $color),
     $colors-variations
@@ -58,6 +45,17 @@ $colors-variations: (
 $fonts: (
   titles: "Asap",
   body: "Open Sans",
+);
+
+$font-size: (
+  base: 16px,
+  header: (
+    main: 1.6rem,
+    secondary: 0.9rem,
+  ),
+  homepage: (
+    base: 1.1rem,
+  ),
 );
 
 $sizes: (
@@ -70,4 +68,18 @@ $breakpoints: (
   mobile-max: 575px,
   tablet-min: 768px,
   tablet-max: 767px,
+  desktop-min: 992px,
+  desktop-max: 991px,
+);
+
+$box-shadows: (
+  offset: 5px,
+  radii: (
+    blur: 15px,
+    spread: -3px,
+  ),
+  colors: (
+    color-channel: #000,
+    alpha-channel: 0.2,
+  ),
 );

@@ -3,6 +3,13 @@
   width: 100%;
   padding: 5px 0;
   position: relative;
+  z-index: 1;
+  @include box-shadow(
+      false,
+      $offsets: (x: 0, y: map-get($box-shadows, offset)),
+      $radii: map-get($box-shadows, radii),
+      $color: map-get($box-shadows, colors)
+    );
   background-color: map-get($colors, primary);
   color: map-get($colors, primary-text);
   &__button {
