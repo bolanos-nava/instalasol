@@ -611,7 +611,7 @@ textarea.form-control {
 }
 
 .body-container--homepage {
-  background-image: url("../../../src/assets/images/solar-panel-3.jpg");
+  background-image: url("../assets/images/solar-panel-3_small.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -1,6 +1,6 @@
 .body-container {
   &--homepage {
-    @include background-image("../../../src/assets/images/solar-panel-3.jpg");
+    @include background-image("../assets/images/solar-panel-3_small.jpg");
   }
 }
 
