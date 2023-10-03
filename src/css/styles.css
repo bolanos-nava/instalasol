@@ -50,7 +50,7 @@ h6 {
   font-weight: 600;
 }
 
-ul {
+ul:not(.list-styled) {
   list-style-type: none;
 }
 
@@ -121,6 +121,13 @@ img {
   flex: 1;
   display: flex;
   position: relative;
+}
+
+.centers-children {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
@@ -768,10 +775,13 @@ textarea.form-control {
   font-size: 13px;
 }
 
-.centers-children {
+.main--catalog__section {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-flow: column;
+  gap: 15px;
+}
+.main--catalog__list {
+  list-style-position: inside;
 }
 
 /*# sourceMappingURL=styles.css.map */

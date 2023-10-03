@@ -18,7 +18,7 @@ h6 {
   font-family: map-get($fonts, titles), sans-serif;
   font-weight: 600;
 }
-ul {
+ul:not(.list-styled) {
   list-style-type: none;
 }
 

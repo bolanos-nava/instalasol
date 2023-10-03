@@ -3,6 +3,7 @@
 @import "variables";
 @import "resets";
 @import "globals";
+@import "utilities/layout";
 
 @import "overrides/bootstrap-overrides";
 @import "components/shared-styles";
@@ -19,9 +20,4 @@
 @import "pages/gallery";
 @import "pages/contact";
 @import "pages/about";
-
-.centers-children {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import "pages/catalog";

@@ -1,0 +1,10 @@
+.main {
+    &--catalog {
+        &__section {
+            @include flex(column, $gap: 15px);
+        }
+        &__list {
+            list-style-position: inside;
+        }
+    }
+}
