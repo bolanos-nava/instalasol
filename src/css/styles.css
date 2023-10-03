@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  background-color: rgba(228, 239, 251, 0.3);
+  background-color: rgba(228, 239, 251, 0.5);
 }
 
 h1,
@@ -130,6 +130,11 @@ img {
 }
 .btn:focus-visible {
   outline: auto;
+}
+
+.main--catalog, .main--about {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .button {
