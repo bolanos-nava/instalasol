@@ -235,15 +235,7 @@ textarea.form-control {
 }
 
 .navibar {
-  display: none;
   background-color: #064061;
-}
-@media (min-width: 768px) {
-  .navibar {
-    flex: 0 0 200px;
-    display: block;
-    padding-top: 100px;
-  }
 }
 .navibar * {
   color: #e3e3e3;
@@ -351,8 +343,49 @@ textarea.form-control {
   transform: translateY(-1px);
 }
 .navibar--sidebar {
+  display: none;
+  position: absolute;
+  height: 100%;
+  transition: transform 0.7s ease-in-out;
   z-index: 1;
   box-shadow: 5px 0 15px -3px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 768px) {
+  .navibar--sidebar {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+  }
+}
+.navibar--sidebar__toggler-button {
+  flex: 1;
+  background-color: #091c3c;
+  border: none;
+  padding: 5px;
+}
+.navibar--sidebar__toggler-button, .navibar--sidebar__toggler-button * {
+  font-size: 1.5rem;
+  color: #e3e3e3;
+}
+.navibar--sidebar__toggler-button * {
+  transition: transform 0.7s ease-in-out;
+  transform-origin: center;
+  transform: rotateZ(0deg);
+}
+.navibar--sidebar__toggler-button #sidebarTogglerArrow {
+  display: flex;
+}
+.navibar--sidebar__list {
+  padding-top: 100px;
+  width: 200px;
+}
+
+.sidebar-close {
+  transform: translateX(-200px);
+}
+
+.rotateTogglerArrow {
+  transform: rotateZ(180deg);
 }
 
 .header {
@@ -675,8 +708,7 @@ textarea.form-control {
 }
 @media (min-width: 768px) {
   .main--homepage__link#contactButton {
-    width: 250px;
-    align-self: flex-end;
+    max-width: 250px;
   }
 }
 .main--homepage__links {
