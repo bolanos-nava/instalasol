@@ -31,6 +31,9 @@
     />
     <link rel="stylesheet" href="../src/css/styles.css" />
 
+    <!-- Own script -->
+    <script defer src="../src/js/app.js"></script>
+
     <!-- Meta tags -->
     <meta
       name="description"
@@ -228,8 +231,9 @@
     </header>
 
     <div class="body-container">
-      <nav class="navibar navibar--sidebar">
-        <ul class="navibar__list">
+      <!-- START SIDE-NAVBAR -->
+      <nav class="navibar navibar--sidebar sidebar-close" id="sidebar">
+        <ul class="navibar__list navibar--sidebar__list">
           <li class="navibar__list-element">
             <a class="navibar__link" href="../index.html"
               ><span class="navibar__link-text">Inicio</span></a
@@ -254,7 +258,18 @@
             >
           </li>
         </ul>
+        <button
+          type="button"
+          class="navibar--sidebar__toggler-button"
+          id="buttonSidebarToggler"
+          aria-label="Botón sidebar"
+        >
+          <span id="sidebarTogglerArrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </button>
       </nav>
+      <!-- END SIDE-NAVBAR -->
 
       <main class="main main--gallery" id="galleryMain">
         <h2 class="main__title main--gallery__title">Galería de proyectos</h2>

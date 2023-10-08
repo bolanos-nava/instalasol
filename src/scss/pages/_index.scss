@@ -46,11 +46,6 @@
       // "Contáctanos" button
       &#contactButton {
         align-self: center;
-
-        @media (min-width: map-get($breakpoints, tablet-min)) {
-          max-width: 250px;
-          // align-self: flex-end;
-        }
       }
 
       &s {

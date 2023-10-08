@@ -104,6 +104,12 @@
   background-size: $size;
 }
 
+@mixin transition($property: all, $duration: 1s, $function: ease-in-out) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $function;
+}
+
 /**
  * Auxiliary mixin to use in other mixins
  * This mixin takes in a map of property names and their values and only assigns them as CSS properties if they are not unset

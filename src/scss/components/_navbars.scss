@@ -135,10 +135,17 @@
 
   &--sidebar {
     display: none;
-    position: absolute;
-    height: 100%;
-    transition: transform 0.7s ease-in-out;
+    z-index: 1000;
+    @include transition(transform, 0.5s, ease-in-out);
+    @include box-shadow(
+      false,
+      $offsets: (x: map-get($box-shadows, offset), y: 0),
+      $radii: map-get($box-shadows, radii),
+      $color: map-get($box-shadows, colors)
+    );
     @media (min-width: map-get($breakpoints, tablet-min)) {
+      margin-left: -1 * map-get($sizes, sidebar);
+      transform: translateX(map-get($sizes, sidebar)); // sidebar start
       @include flex(row, $align-i: flex-start);
     }
     &__toggler-button {
@@ -153,7 +160,7 @@
       }
 
       & * {
-        transition: transform 0.7s ease-in-out;
+        @include transition(transform, 0.5s, ease-in-out);
         transform-origin: center;
         transform: rotateZ(0deg);
       }
@@ -167,19 +174,11 @@
       padding-top: 100px;
       width: map-get($sizes, sidebar);
     }
-
-    z-index: 1;
-    @include box-shadow(
-      false,
-      $offsets: (x: map-get($box-shadows, offset), y: 0),
-      $radii: map-get($box-shadows, radii),
-      $color: map-get($box-shadows, colors)
-    );
   }
 }
 
 .sidebar-close {
-  transform: translateX(-1 * map-get($sizes, sidebar));
+  transform: translateX(0);
 }
 
 .rotateTogglerArrow {
