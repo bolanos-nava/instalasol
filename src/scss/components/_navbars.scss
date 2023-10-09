@@ -184,3 +184,18 @@
 .rotateTogglerArrow {
   transform: rotateZ(180deg);
 }
+
+.sidebar-backdrop {
+  @include transition(
+    "background-color, backdrop-filter, z-index",
+    0.5s,
+    ease-in
+  );
+  z-index: -1;
+}
+
+.backdrop {
+  z-index: 100;
+  backdrop-filter: blur(2px);
+  background-color: rgba(map-get($colors, gray-coco), 0.4);
+}

@@ -392,6 +392,19 @@ textarea.form-control {
   transform: rotateZ(180deg);
 }
 
+.sidebar-backdrop {
+  transition-property: background-color, backdrop-filter, z-index;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+  z-index: -1;
+}
+
+.backdrop {
+  z-index: 100;
+  backdrop-filter: blur(2px);
+  background-color: rgba(197, 192, 192, 0.4);
+}
+
 .header {
   display: flex;
   flex-flow: row;
@@ -750,10 +763,8 @@ textarea.form-control {
 
 .main--gallery__selects {
   width: 100%;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .main--contact {

@@ -2,7 +2,9 @@
   &--gallery {
     &__selects {
       width: 100%;
-      @include flex(column, space-between, $gap: 12px);
+      // @include flex(column, space-between, $gap: 12px);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
   }
 }
