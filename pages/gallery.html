@@ -122,8 +122,9 @@
           >Conmutar navegación</span
         >
         <button
-          class="navibar__toggler navbar-toggler"
+          class="navibar__toggler navibar--header__toggler navbar-toggler"
           type="button"
+          id="buttonHeaderNavbarToggler"
           data-bs-toggle="collapse"
           data-bs-target="#headerNav"
           aria-controls="headerNav"
@@ -260,7 +261,7 @@
         </ul>
         <button
           type="button"
-          class="navibar--sidebar__toggler-button"
+          class="navibar__toggler navibar--sidebar__toggler"
           id="buttonSidebarToggler"
           aria-label="Botón sidebar"
         >
@@ -272,8 +273,8 @@
       <!-- END SIDE-NAVBAR -->
 
       <div
-        class="position-absolute w-100 h-100 sidebar-backdrop"
-        id="sidebarBackdrop"
+        class="position-absolute w-100 h-100 navbar-backdrop"
+        id="navbarBackdrop"
       ></div>
       <main class="main main--gallery" id="main">
         <h2 class="main__title main--gallery__title">Galería de proyectos</h2>

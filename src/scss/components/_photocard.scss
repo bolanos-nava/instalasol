@@ -1,17 +1,25 @@
 .photocard {
-  &s { // photocards
+  &s {
+    // photocards
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: 20px;
+    grid-template-columns: minmax(0, 1fr);
+    @media (min-width: 300px) {
+      @include fluid-grid(200px);
+      // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
     @media (min-width: 400px) {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      @include fluid-grid(300px);
+      // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     @media (min-width: map-get($breakpoints, mobile-min)) {
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      @include fluid-grid(400px);
+      // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
     @media (min-width: map-get($breakpoints, tablet-min)) {
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      @include fluid-grid(350px);
+      // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 
     // putting this at the end of the cascade so it overrides every style when on landscape and height is <= mobile-max
@@ -20,7 +28,8 @@
     }
   }
 
-  & { // photocard
+  & {
+    // photocard
     height: 80vh; // on mobile the height will be fixed to 80vh;
     @include flex(column, flex-start, center, 20px);
     padding: 15px; // on mobile, low padding so the content of the cards takes more area inside of the photocard

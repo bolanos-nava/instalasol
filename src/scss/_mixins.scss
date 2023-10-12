@@ -122,3 +122,7 @@
     }
   }
 }
+
+@mixin fluid-grid($min-width, $max-width: 1fr) {
+  grid-template-columns: repeat(auto-fit, minmax($min-width, $max-width));
+}

@@ -16,18 +16,6 @@
   }
 
   &__toggler {
-    & {
-      background-color: map-get($colors, primary-text);
-    }
-
-    &,
-    &:focus {
-      @include box-shadow(
-        false,
-        $radii: (blur: 0, spread: 0.5px),
-        $color: (color-channel: #000, alpha-channel: 0.184)
-      );
-    }
   }
 
   &__list {
@@ -96,7 +84,21 @@
       position: absolute;
       top: 100%;
       width: 100%;
-      z-index: 1000;
+    }
+
+    &__toggler {
+      & {
+        background-color: map-get($colors, primary-text);
+      }
+
+      &,
+      &:focus {
+        @include box-shadow(
+          false,
+          $radii: (blur: 0, spread: 0.5px),
+          $color: (color-channel: #000, alpha-channel: 0.184)
+        );
+      }
     }
 
     &__list {
@@ -135,7 +137,7 @@
 
   &--sidebar {
     display: none;
-    z-index: 1000;
+    z-index: 102;
     @include transition(transform, 0.5s, ease-in-out);
     @include box-shadow(
       false,
@@ -148,7 +150,7 @@
       transform: translateX(map-get($sizes, sidebar)); // sidebar start
       @include flex(row, $align-i: flex-start);
     }
-    &__toggler-button {
+    &__toggler {
       flex: 1;
       background-color: map-get($colors, primary);
       border: none;
@@ -181,11 +183,11 @@
   transform: translateX(0);
 }
 
-.rotateTogglerArrow {
+.rotate-toggler-arrow {
   transform: rotateZ(180deg);
 }
 
-.sidebar-backdrop {
+.navbar-backdrop {
   @include transition(
     "background-color, backdrop-filter, z-index",
     0.5s,
@@ -194,8 +196,8 @@
   z-index: -1;
 }
 
-.backdrop {
-  z-index: 100;
+.backdrop-show {
+  z-index: 101;
   backdrop-filter: blur(2px);
   background-color: rgba(map-get($colors, gray-coco), 0.4);
 }
