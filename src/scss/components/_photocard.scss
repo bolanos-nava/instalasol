@@ -7,19 +7,15 @@
     grid-template-columns: minmax(0, 1fr);
     @media (min-width: 300px) {
       @include fluid-grid(200px);
-      // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
     @media (min-width: 400px) {
       @include fluid-grid(300px);
-      // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     @media (min-width: map-get($breakpoints, mobile-min)) {
       @include fluid-grid(400px);
-      // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
     @media (min-width: map-get($breakpoints, tablet-min)) {
       @include fluid-grid(350px);
-      // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 
     // putting this at the end of the cascade so it overrides every style when on landscape and height is <= mobile-max
@@ -45,10 +41,10 @@
       padding: 20px;
     }
     @media (min-height: map-get($breakpoints, tablet-min)) {
-      height: 800px; // when we reach a height of tablet-min, fix height to 800px
+      height: 800px; // when we reach a height of tablet-min, fix height
     }
     @media (orientation: landscape) and (max-height: map-get($breakpoints, mobile-max)) {
-      height: 20rem; // when we are on landscape and when the height is less than mobile-max, then set height to 20rem
+      height: 20rem; // when we are on landscape and when the height is less than mobile-max, fix height
       padding: 15px;
       @include flex(row, center, $gap: 10px);
     }

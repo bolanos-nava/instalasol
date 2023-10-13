@@ -15,8 +15,8 @@ function toggleSidebar() {
     const classListArray = Array.from(classList);
     const doesIncludeShow = classListArray.includes("show");
     const doesIncludeCollapse = classListArray.includes("collapse");
-    if (doesIncludeShow) classList.remove("show");
-    if (doesIncludeCollapse && !doesIncludeShow) classList.add("show");
+    doesIncludeShow && classList.remove("show");
+    doesIncludeCollapse && !doesIncludeShow && classList.add("show");
   };
 
   for (const toggler of buttonsNavbarTogglers) {

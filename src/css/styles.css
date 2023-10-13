@@ -221,7 +221,6 @@ textarea.form-control {
 }
 
 .main {
-  flex: 1;
   padding: 25px;
 }
 @media (min-width: 576px) {
