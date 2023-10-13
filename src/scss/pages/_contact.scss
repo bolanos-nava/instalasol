@@ -9,10 +9,19 @@
         gap: 10px;
       }
 
-      &__submit-button {
-        align-self: flex-end;
-        padding-left: 30px;
-        padding-right: 30px;
+      &__button {
+        &s {
+          width: 100%;
+          @include flex(column, center, stretch, 5px);
+          @media (min-width: 300px) {
+            @include flex(row, flex-end, $gap: 5px);
+          }
+        }
+
+        & {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
       }
     }
   }
