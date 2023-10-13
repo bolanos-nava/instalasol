@@ -30,10 +30,12 @@ $colors: (
     (
       emphasis: darken(#c5c0c0, 10%),
     ),
+
+  // Random named colors
+  gray-coco: #c5c0c0
 );
 
-$colors-variations: (
-);
+$colors-variations: ();
 
 @each $color in "primary", "secondary", "bg-primary" {
   $colors-variations: map-merge(

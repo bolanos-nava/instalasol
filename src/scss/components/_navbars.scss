@@ -1,11 +1,5 @@
 .navibar {
-  display: none;
   background-color: map-get($colors, primary-contrast);
-  @media (min-width: map-get($breakpoints, tablet-min)) {
-    flex: 0 0 map-get($sizes, sidebar);
-    display: block;
-    padding-top: 100px;
-  }
 
   & * {
     color: map-get($colors, primary-text);
@@ -22,18 +16,6 @@
   }
 
   &__toggler {
-    & {
-      background-color: map-get($colors, primary-text);
-    }
-
-    &,
-    &:focus {
-      @include box-shadow(
-        false,
-        $radii: (blur: 0, spread: 0.5px),
-        $color: (color-channel: #000, alpha-channel: 0.184)
-      );
-    }
   }
 
   &__list {
@@ -46,7 +28,7 @@
     padding: 12px;
     padding-left: 5px;
     border: 2px solid #0000;
-    
+
     &:not(&.button--rounded) {
       border-left: none;
       border-radius: 0 20px 20px 0;
@@ -102,7 +84,21 @@
       position: absolute;
       top: 100%;
       width: 100%;
-      z-index: 1000;
+    }
+
+    &__toggler {
+      & {
+        background-color: map-get($colors, primary-text);
+      }
+
+      &,
+      &:focus {
+        @include box-shadow(
+          false,
+          $radii: (blur: 0, spread: 0.5px),
+          $color: (color-channel: #000, alpha-channel: 0.184)
+        );
+      }
     }
 
     &__list {
@@ -140,12 +136,72 @@
   }
 
   &--sidebar {
-    z-index: 1;
+    display: none;
+    z-index: 102;
+    @include transition(transform, 0.5s, ease-in-out);
     @include box-shadow(
       false,
       $offsets: (x: map-get($box-shadows, offset), y: 0),
       $radii: map-get($box-shadows, radii),
       $color: map-get($box-shadows, colors)
     );
+    @media (min-width: map-get($breakpoints, tablet-min)) {
+      margin-left: -1 * map-get($sizes, sidebar);
+      transform: translateX(map-get($sizes, sidebar)); // sidebar start
+      @include flex(row, $align-i: flex-start);
+    }
+    &__toggler {
+      flex: 1;
+      background-color: map-get($colors, primary);
+      border: none;
+      padding: 5px;
+      &,
+      & * {
+        font-size: 1.5rem;
+        color: map-get($colors, primary-text);
+      }
+
+      & * {
+        @include transition(transform, 0.5s, ease-in-out);
+        transform-origin: center;
+        transform: rotateZ(0deg);
+      }
+
+      & #togglerSidebarArrow {
+        @include flex;
+      }
+    }
+
+    &__list {
+      padding-top: 100px;
+      width: map-get($sizes, sidebar);
+    }
   }
+}
+
+.sidebar-close {
+  transform: translateX(0);
+}
+
+.rotate-toggler-arrow {
+  transform: rotateZ(180deg);
+}
+
+.navbar-backdrop {
+  @include transition(
+    "background-color, backdrop-filter, z-index",
+    0.2s,
+    ease-in
+  );
+  z-index: -1;
+
+  @media (min-width: map-get($breakpoints, mobile-min)) {
+    transition-property: 0.5s;
+  }
+}
+
+.backdrop-show {
+  z-index: 101;
+  backdrop-filter: blur(2px);
+  background-color: rgba(map-get($colors, gray-coco), 0.4);
 }

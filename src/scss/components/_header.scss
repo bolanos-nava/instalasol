@@ -3,7 +3,7 @@
   width: 100%;
   padding: 5px 0;
   position: relative;
-  z-index: 1;
+  z-index: 103;
   @include box-shadow(
       false,
       $offsets: (x: 0, y: map-get($box-shadows, offset)),
