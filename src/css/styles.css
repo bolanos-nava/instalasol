@@ -799,8 +799,23 @@ textarea.form-control {
     gap: 10px;
   }
 }
-.main--contact-form__submit-button {
-  align-self: flex-end;
+.main--contact-form__buttons {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 5px;
+}
+@media (min-width: 300px) {
+  .main--contact-form__buttons {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+}
+.main--contact-form__button {
   padding-left: 30px;
   padding-right: 30px;
 }
