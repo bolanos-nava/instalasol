@@ -167,7 +167,7 @@
         transform: rotateZ(0deg);
       }
 
-      & #sidebarTogglerArrow {
+      & #togglerSidebarArrow {
         @include flex;
       }
     }
@@ -190,10 +190,14 @@
 .navbar-backdrop {
   @include transition(
     "background-color, backdrop-filter, z-index",
-    0.5s,
+    0.2s,
     ease-in
   );
   z-index: -1;
+
+  @media (min-width: map-get($breakpoints, mobile-min)) {
+    transition-property: 0.5s;
+  }
 }
 
 .backdrop-show {

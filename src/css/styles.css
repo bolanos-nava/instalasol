@@ -375,7 +375,7 @@ textarea.form-control {
   transform-origin: center;
   transform: rotateZ(0deg);
 }
-.navibar--sidebar__toggler #sidebarTogglerArrow {
+.navibar--sidebar__toggler #togglerSidebarArrow {
   display: flex;
 }
 .navibar--sidebar__list {
@@ -393,9 +393,14 @@ textarea.form-control {
 
 .navbar-backdrop {
   transition-property: background-color, backdrop-filter, z-index;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-in;
   z-index: -1;
+}
+@media (min-width: 576px) {
+  .navbar-backdrop {
+    transition-property: 0.5s;
+  }
 }
 
 .backdrop-show {

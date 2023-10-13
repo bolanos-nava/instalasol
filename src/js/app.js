@@ -1,28 +1,27 @@
 function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const buttonsNavbarToggler = document.getElementsByClassName("navibar__toggler");
-    const sidebarTogglerArrow = document.getElementById("sidebarTogglerArrow");
-    const navbarBackdrop = document.getElementById("navbarBackdrop");
+  const sidebar = document.getElementById("sidebar");
+  const navbarHeader = document.getElementById("navbarHeader");
+  const buttonsNavbarTogglers =
+    document.getElementsByClassName("navibar__toggler");
+  const togglerSidebarArrow = document.getElementById("togglerSidebarArrow");
+  const navbarBackdrop = document.getElementById("navbarBackdrop");
 
-    const toggleBackdrop = () => navbarBackdrop.classList.toggle("backdrop-show");
-    const toggleSidebar = () => {
-        toggleBackdrop();
-        sidebar.classList.toggle("sidebar-close");
-        sidebarTogglerArrow.classList.toggle("rotate-toggler-arrow");
-    }
-    const toggleHeaderNavbar = toggleBackdrop;
+  const toggleSidebar = () => {
+    navbarBackdrop.classList.toggle("backdrop-show");
+    sidebar.classList.toggle("sidebar-close");
+    togglerSidebarArrow.classList.toggle("rotate-toggler-arrow");
 
-    for (const buttonToggler of buttonsNavbarToggler) {
-        switch (buttonToggler.id) {
-            case "buttonSidebarToggler":
-                buttonToggler.addEventListener("click", toggleSidebar);
-                break;
-            case "buttonHeaderNavbarToggler":
-                buttonToggler.addEventListener("click", toggleSidebar);
-                break;
-        }
-    }
+    const { classList } = navbarHeader;
+    const classListArray = Array.from(classList);
+    const doesIncludeShow = classListArray.includes("show");
+    const doesIncludeCollapse = classListArray.includes("collapse");
+    if (doesIncludeShow) classList.remove("show");
+    if (doesIncludeCollapse && !doesIncludeShow) classList.add("show");
+  };
+
+  for (const toggler of buttonsNavbarTogglers) {
+    toggler.addEventListener("click", toggleSidebar);
+  }
 }
 
 toggleSidebar();
-
