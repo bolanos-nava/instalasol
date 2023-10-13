@@ -15,9 +15,6 @@
     }
   }
 
-  &__toggler {
-  }
-
   &__list {
     @include flex(column, center, $gap: 20px);
   }

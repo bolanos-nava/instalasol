@@ -92,6 +92,7 @@
   );
 }
 
+// Add background image
 @mixin background-image(
   $url,
   $repeat: no-repeat,
@@ -123,6 +124,7 @@
   }
 }
 
+// Mixin to generate a fluid grid container: automatically calculates the number of columns that fit by setting a min and max size
 @mixin fluid-grid($min-width, $max-width: 1fr) {
   grid-template-columns: repeat(auto-fit, minmax($min-width, $max-width));
 }
